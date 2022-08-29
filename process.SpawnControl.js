@@ -406,7 +406,7 @@ var processSpawnControl = {
                 let DistanceRoom = 1000;
                 for (room in RoomMass) {
                     console.log(SquadFlag.pos.roomName+RoomMass[room].name);
-                    //let SquadFlag = Game.map.getRoomLinearDistance(SquadFlag.pos.roomName, RoomMass[room].name); // 3
+                    let SquadFlag = Game.map.getRoomLinearDistance(SquadFlag.pos.roomName, RoomMass[room].name); // 3
                 /**    if (DistanceRoom > SquadFlag) {
                         DistanceRoom = SquadFlag;
                     } */
