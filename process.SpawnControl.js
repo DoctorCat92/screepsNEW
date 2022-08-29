@@ -397,7 +397,7 @@ var processSpawnControl = {
 
         //---------------Флаги Астартес        
 
-     /**    var SquadFlag = _.find(Game.flags, f => f.name.startsWith('Squad'));  
+     /** */   var SquadFlag = _.find(Game.flags, f => f.name.startsWith('Squad'));  
 
         if (SquadFlag) {
             let FlagPowerMining  = str.indexOf('PowerMining', 0);
@@ -412,7 +412,7 @@ var processSpawnControl = {
                 }
                 Game.map.visual.text(DistanceRoom, new RoomPosition(SquadFlag.pos.x+2,SquadFlag.pos.y+2,SquadFlag.pos.roomName), {color: '#FF0000', fontSize: 10});
             }
-        } */
+        } 
   
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
 
