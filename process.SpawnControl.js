@@ -397,10 +397,21 @@ var processSpawnControl = {
 
         //---------------Флаги Астартес        
 
-        var SquadsFlags = _.find(Game.flags, f => f.name.startsWith('Squad'));
+        var SquadFlag = _.find(Game.flags, f => f.name.startsWith('Squad'));  
 
-        if (SquadsFlags) {
-           // let numberSquad = SquadsFlags 
+        if (SquadFlag) {
+            let FlagPowerMining  = str.indexOf('PowerMining', 4);
+            if (FlagPowerMining !== -1) {
+                let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
+                let DistanceRoom = 1000;
+                for (room in RoomMass) 
+                    let SquadFlag = Game.map.getRoomLinearDistance(SquadFlag.pos.roomName, RoomMass[room].name); // 3
+                    if (DistanceRoom > SquadFlag) {
+                        DistanceRoom = SquadFlag;
+                    }
+                }
+                Game.map.visual.text(DistanceRoom, new RoomPosition(SquadFlag.pos.x+2,SquadFlag.pos.y+2,SquadFlag.pos.roomName), {color: '#FF0000', fontSize: 10});
+            }
         } 
 
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
