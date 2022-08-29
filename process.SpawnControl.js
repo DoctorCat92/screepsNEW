@@ -411,7 +411,7 @@ var processSpawnControl = {
                         DistanceRoom = DistanceFlag;
                     } 
                 } 
-                Game.visual.text('asdasdadadad'+DistanceRoom, new RoomPosition(SquadFlag.pos.x+2,SquadFlag.pos.y+2,SquadFlag.pos.roomName), {color: '#FF0000', fontSize: 10});
+                new RoomVisual(SquadFlag.pos.roomName).text(DistanceRoom ,SquadFlag.pos.x+2,SquadFlag.pos.y+2, {color: '#FF0000', fontSize: 10});
             }
         } 
   
