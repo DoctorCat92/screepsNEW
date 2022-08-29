@@ -396,7 +396,7 @@ var processSpawnControl = {
 
 
         //---------------Флаги Астартес        
-
+    try {
         var SquadFlag = _.find(Game.flags, f => f.name.startsWith('Squad'));  
 
         if (SquadFlag) {
@@ -413,7 +413,8 @@ var processSpawnControl = {
                 Game.map.visual.text(DistanceRoom, new RoomPosition(SquadFlag.pos.x+2,SquadFlag.pos.y+2,SquadFlag.pos.roomName), {color: '#FF0000', fontSize: 10});
             }
         } 
-
+    } catch (err) { }
+    
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
 
         if (CreateSquad) {
