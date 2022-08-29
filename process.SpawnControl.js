@@ -395,7 +395,13 @@ var processSpawnControl = {
         }
 
 
-        //---------------Флаг Астартес        
+        //---------------Флаги Астартес        
+
+        var SquadsFlags = _.find(Game.flags, f => f.name.startsWith('Squad'));
+
+        if (SquadsFlags) {
+           // let numberSquad = SquadsFlags 
+        } 
 
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
 
