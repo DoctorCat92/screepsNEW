@@ -404,7 +404,7 @@ var processSpawnControl = {
             if (FlagPowerMining !== -1) {
                 let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
                 let DistanceRoom = 1000;
-                 for (room in RoomMass) 
+                for (room in RoomMass) {
                     //let SquadFlag = Game.map.getRoomLinearDistance(SquadFlag.pos.roomName, RoomMass[room].name); // 3
                 /**    if (DistanceRoom > SquadFlag) {
                         DistanceRoom = SquadFlag;
