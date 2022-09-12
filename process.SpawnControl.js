@@ -412,7 +412,7 @@ var processSpawnControl = {
                         var ResultRoom = RoomMass[room].name;
                     } 
                 } 
-                new RoomVisual(SquadFlag.pos.roomName).text(DistanceRoom+' '+ResultRoom ,SquadFlag.pos.x+2,SquadFlag.pos.y+2, {color: '#FF0000', fontSize: 10});
+                new RoomVisual(SquadFlag.pos.roomName).text('Из комнаты '+ResultRoom+' '+DistanceRoom ,SquadFlag.pos.x+2,SquadFlag.pos.y+2, {color: '#FF0000', fontSize: 10});
 
                 if (ResultRoom !== undefined) {
                     if (Memory.army[SquadFlag.color] == undefined) {
