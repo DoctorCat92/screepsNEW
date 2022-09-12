@@ -405,7 +405,7 @@ var processSpawnControl = {
                 let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
                 let DistanceRoom = 1000;
                 for (room in RoomMass) {
-                    console.log(SquadFlag.pos.roomName+RoomMass[room].name);
+                    
                     let DistanceFlag = Game.map.getRoomLinearDistance(SquadFlag.pos.roomName, RoomMass[room].name); // 3
                     if (DistanceRoom > DistanceFlag) {
                         DistanceRoom = DistanceFlag;
@@ -416,6 +416,7 @@ var processSpawnControl = {
 
                 if (ResultRoom !== undefined) {
                     let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
+                    console.log(FlagCheckPoint.name);
                     if (FlagCheckPoint) {
                         for (var nameArmy=0; nameArmy < 10; nameArmy++) {
                             if (Memory.army[nameArmy] == undefined) {
