@@ -420,10 +420,11 @@ var processSpawnControl = {
                     if (FlagCheckPoint) {
                         for (var nameArmy=1; nameArmy < 10; nameArmy++) {
                             if (Memory.army[nameArmy] == undefined) {
-                                break;
+                                Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+nameArmy);
+                                break;   
                             }
                         } console.log(FlagCheckPoint.name+nameArmy);
-                        Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+nameArmy);
+                        
                     }
                 }
             }
