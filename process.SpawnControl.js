@@ -418,7 +418,7 @@ var processSpawnControl = {
                     let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
                     
                     if (FlagCheckPoint) {
-                        for (var nameArmy=0; nameArmy < 10; nameArmy++) {
+                        for (var nameArmy=1; nameArmy < 10; nameArmy++) {
                             if (Memory.army[nameArmy] == undefined) {
                                 break;
                             }
