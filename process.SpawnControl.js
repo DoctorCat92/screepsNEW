@@ -413,6 +413,18 @@ var processSpawnControl = {
                     } 
                 } 
                 new RoomVisual(SquadFlag.pos.roomName).text(DistanceRoom+' '+ResultRoom ,SquadFlag.pos.x+2,SquadFlag.pos.y+2, {color: '#FF0000', fontSize: 10});
+
+                if (ResultRoom !== undefined) {
+                    let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
+                    if (FlagCheckPoint) {
+                        for (var nameArmy=0; nameArmy < 10; nameArmy++) {
+                            if (Memory.army[nameArmy] == undefined) {
+                                break;
+                            }
+                        }
+                        Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+nameArmy);
+                    }
+                }
             }
         } 
   
