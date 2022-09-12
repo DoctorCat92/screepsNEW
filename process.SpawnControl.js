@@ -417,8 +417,9 @@ var processSpawnControl = {
                 if (ResultRoom !== undefined) {
                     if (Memory.army[SquadFlag.color] !== undefined) {
                         let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
+                        console.log('чивапчичи');
                         if (FlagCheckPoint) {
-                            console.log('чивапчичи');
+                            
                             Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+SquadFlag.color);
                         }
                     }
