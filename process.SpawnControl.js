@@ -415,16 +415,11 @@ var processSpawnControl = {
                 new RoomVisual(SquadFlag.pos.roomName).text(DistanceRoom+' '+ResultRoom ,SquadFlag.pos.x+2,SquadFlag.pos.y+2, {color: '#FF0000', fontSize: 10});
 
                 if (ResultRoom !== undefined) {
-                    let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
-                    
-                    if (FlagCheckPoint) {
-                        for (var nameArmy=1; nameArmy < 10; nameArmy++) {
-                            if (Memory.army[nameArmy] == undefined) {
-                                Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+nameArmy);
-                                break;   
-                            }
-                        } console.log(FlagCheckPoint.name+nameArmy);
-                        
+                    if (Memory.army[SquadFlag.color] !== undefined) {
+                        let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
+                        if (FlagCheckPoint) {
+                            Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+SquadFlag.color);
+                        }
                     }
                 }
             }
