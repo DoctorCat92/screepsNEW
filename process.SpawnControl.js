@@ -416,13 +416,13 @@ var processSpawnControl = {
 
                 if (ResultRoom !== undefined) {
                     let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
-                    console.log(FlagCheckPoint.name);
+                    
                     if (FlagCheckPoint) {
                         for (var nameArmy=0; nameArmy < 10; nameArmy++) {
                             if (Memory.army[nameArmy] == undefined) {
                                 break;
                             }
-                        }
+                        } console.log(FlagCheckPoint.name+nameArmy);
                         Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+nameArmy);
                     }
                 }
