@@ -398,7 +398,7 @@ var processSpawnControl = {
         //---------------Флаги Астартес        
 
 
-        //------Флаг на автодобычу
+        //------Флаг на добычу повера
       var SquadFlag = _.find(Game.flags, f => f.name.startsWith('Squad'));  
 
         if (SquadFlag) {
