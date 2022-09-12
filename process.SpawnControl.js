@@ -419,8 +419,7 @@ var processSpawnControl = {
                         let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
                         
                         if (FlagCheckPoint) {
-                            console.log('чивапчичиasdadasd');
-                            console.log(FlagCheckPoint.x+FlagCheckPoint.y+' Флаганамана'+ Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad'+SquadFlag.color, SquadFlag.color) );
+                            Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', SquadFlag.color);
                         }
                     }
                 }
