@@ -420,7 +420,7 @@ var processSpawnControl = {
                         
                         if (FlagCheckPoint) {
                             console.log('чивапчичиasdadasd');
-                            console.log('Флаганамана'+ Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+SquadFlag.color, SquadFlag.color) );
+                            console.log(FlagCheckPoint.x+FlagCheckPoint.y+' Флаганамана'+ Game.rooms[ResultRoom].createFlag(FlagCheckPoint.x, FlagCheckPoint.y, 'CreateSquad'+SquadFlag.color, SquadFlag.color) );
                         }
                     }
                 }
