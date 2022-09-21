@@ -425,6 +425,7 @@ var processSpawnControl = {
                             var NumberColor = str.slice(SquadFlag+5, 7);
                             var ColorVar = Number(str[NumberColor]);
                             Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
+                            new RoomVisual(SquadFlag.pos.roomName).text('Из комнаты '+ColorVar+' '+DistanceRoom ,SquadFlag.pos.x+3,SquadFlag.pos.y+3, {color: '#FF0000', fontSize: 10});
                         }
                     }
                 }
