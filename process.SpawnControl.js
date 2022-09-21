@@ -421,7 +421,11 @@ var processSpawnControl = {
                         let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
                         
                         if (FlagCheckPoint) {
-                            Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', SquadFlag.color);
+                            var ColorFlag = SquadFlag.indexOf('Squad');
+                            var str = SquadFlag.name;
+                            var NumberColor = str.slice(ColorFlag+5, 7);
+                            var ColorVar = Number(str[NumberColor]);
+                            Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
                         }
                     }
                 }
