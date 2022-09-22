@@ -399,39 +399,42 @@ var processSpawnControl = {
 
 
         //------Флаг на добычу повера
-      var SquadFlag = _.find(Game.flags, f => f.name.startsWith('Squad'));  
+        var SquadFlag = _.filter(Game.flags, f => f.name.startsWith('Squad'));  
 
-        if (SquadFlag) {
-            let FlagPowerMining  = SquadFlag.name.indexOf('PowerMining', 0);
-            if (FlagPowerMining !== -1) {
-                let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
-                let DistanceRoom = 1000;
-                for (room in RoomMass) {
-                    
-                    let DistanceFlag = Game.map.getRoomLinearDistance(SquadFlag.pos.roomName, RoomMass[room].name); // 3
-                    if (DistanceRoom > DistanceFlag) {
-                        DistanceRoom = DistanceFlag;
-                        var ResultRoom = RoomMass[room].name;
-                    } 
-                } 
-                new RoomVisual(SquadFlag.pos.roomName).text('Из комнаты '+ResultRoom+' '+DistanceRoom ,SquadFlag.pos.x+2,SquadFlag.pos.y+2, {color: '#FF0000', fontSize: 10});
-
-                if (ResultRoom !== undefined) {
-                    if (Memory.army[SquadFlag.color] == undefined) {
-                        let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
+        for (f in SquadFlag) {
+            if (SquadFlag[f]) {
+                let FlagPowerMining  = SquadFlag[f].name.indexOf('PowerMining', 0);
+                if (FlagPowerMining !== -1) {
+                    let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
+                    let DistanceRoom = 1000;
+                    for (room in RoomMass) {
                         
-                        if (FlagCheckPoint) {
-                            var str = SquadFlag.name;
-                            var Space = str.indexOf(' ', 5);
-                            var NumberColor = str.slice(str+5, Space);
-                            var ColorVar = Number(str[NumberColor]);
-                            Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
+                        let DistanceFlag = Game.map.getRoomLinearDistance(SquadFlag[f].pos.roomName, RoomMass[room].name); // 3
+                        if (DistanceRoom > DistanceFlag) {
+                            DistanceRoom = DistanceFlag;
+                            var ResultRoom = RoomMass[room].name;
+                        } 
+                    } 
+                    new RoomVisual(SquadFlag[f].pos.roomName).text('Из комнаты '+ResultRoom+' '+DistanceRoom ,SquadFlag[f].pos.x+2,SquadFlag[f].pos.y+2, {color: '#FF0000', fontSize: 10});
+
+                    if (ResultRoom !== undefined) {
+                        if (Memory.army[SquadFlag[f].color] == undefined) {
+                            let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
+                            
+                            if (FlagCheckPoint) {
+                                var str = SquadFlag[f].name;
+                                var Space = str.indexOf(' ', 5);
+                                var NumberColor = str.slice(str+5, Space);
+                                var ColorVar = Number(str[NumberColor]);
+                                Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
+                            }
                         }
                     }
                 }
-            }
-        } 
-  
+            } 
+        }
+
+        
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
 
         if (CreateSquad) {
