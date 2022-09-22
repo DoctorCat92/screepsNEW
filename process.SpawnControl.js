@@ -420,7 +420,7 @@ var processSpawnControl = {
                     if (ResultRoom !== undefined) {
                         var str = SquadFlag[f].name;
                         var Space = str.indexOf('-');
-                        var NumberColor = str.slice(str+5, Space);
+                        var NumberColor = str.slice(5, Space);
                         var ColorVar = Number(str[NumberColor]);
                         if (Memory.army[ColorVar] == undefined) {
                             let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
