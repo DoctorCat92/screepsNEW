@@ -422,7 +422,8 @@ var processSpawnControl = {
                         
                         if (FlagCheckPoint) {
                             var str = SquadFlag.name;
-                            var NumberColor = str.slice(SquadFlag+5, 7);
+                            var Space = str.indexOf(' ', 5);
+                            var NumberColor = str.slice(str+5, Space);
                             var ColorVar = Number(str[NumberColor]);
                             Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
                         }
