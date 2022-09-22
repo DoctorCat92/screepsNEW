@@ -418,14 +418,15 @@ var processSpawnControl = {
                     new RoomVisual(SquadFlag[f].pos.roomName).text('Из комнаты '+ResultRoom+' '+DistanceRoom ,SquadFlag[f].pos.x+2,SquadFlag[f].pos.y+2, {color: '#FF0000', fontSize: 10});
 
                     if (ResultRoom !== undefined) {
-                        if (Memory.army[SquadFlag[f].color] == undefined) {
+                        var str = SquadFlag[f].name;
+                        var Space = str.indexOf(' ', 5);
+                        var NumberColor = str.slice(str+5, Space);
+                        var ColorVar = Number(str[NumberColor]);
+                        if (Memory.army[ColorVar] == undefined) {
                             let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
                             
                             if (FlagCheckPoint) {
-                                var str = SquadFlag[f].name;
-                                var Space = str.indexOf(' ', 5);
-                                var NumberColor = str.slice(str+5, Space);
-                                var ColorVar = Number(str[NumberColor]);
+                                
                                 Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
                             }
                         }
