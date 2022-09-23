@@ -193,7 +193,7 @@ var processSpawnControl = {
             } else if (LevelRoom.level == 7) {
                 TablePopulation[process.Room + 'ControlRepairer'] = { role: 'repairer', roomNumber: process.Room, priority: 3, count: 1, staffed: [], charact: [MOVE, MOVE, MOVE, MOVE, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY], options: 1, };
             } else if (LevelRoom.level == 8) {
-                TablePopulation[process.Room + 'ControlRepairer'] = { role: 'repairer', roomNumber: process.Room, priority: 3, count: 1, staffed: [], charact: [MOVE, WORK, CARRY, MOVE, WORK, CARRY, MOVE, WORK, CARRY, MOVE, WORK, CARRY], options: 1, };
+                TablePopulation[process.Room + 'ControlRepairer'] = { role: 'repairer', roomNumber: process.Room, priority: 3, count: 2, staffed: [], charact: [MOVE, WORK, CARRY, MOVE, WORK, CARRY, MOVE, WORK, CARRY, MOVE, WORK, CARRY], options: 1, };
             }
         }
 
