@@ -97,7 +97,7 @@ var roleRepairer = {
             var Storage = creep.room.find(FIND_CONSTRUCTION_SITES, {filter: structure => ((structure.structureType == STRUCTURE_STORAGE) && (structure.store[RESOURCE_ENERGY] > 500000))});
             if (Storage[0]) {
                 if(creep.withdraw(Storage[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.travelTo(sources);
+                    creep.travelTo(Storage[0]);
                 }
             } else if (sources) {
                 if(creep.harvest(sources) == ERR_NOT_IN_RANGE) {
