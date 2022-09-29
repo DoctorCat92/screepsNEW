@@ -12,6 +12,7 @@ var roleRepairer = {
 
         if(creep.memory.repairer && (creep.carry.energy == 0 || creep.memory.target == undefined)) {
             creep.memory.repairer = false;
+            creep.memory.building == false;
             creep.say('harvesting');
 	    }
 	    let Targets = creep.room.find(FIND_STRUCTURES, {filter: structure => structure.hits < structure.hitsMax}); 
