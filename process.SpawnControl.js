@@ -403,7 +403,7 @@ var processSpawnControl = {
 
         for (f in SquadFlag) {
             if (SquadFlag[f]) {
-                let FlagPowerMining  = SquadFlag[f].name.indexOf('PowerMining', 0);
+                let FlagPowerMining  = SquadFlag[f].name.indexOf('PowerMining' || 'AttackRoom', 0);
                 if (FlagPowerMining !== -1) {
                     let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
                     let DistanceRoom = 1000;
