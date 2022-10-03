@@ -361,7 +361,7 @@ let roleAstartes = {
                                 
                                 let targetTower = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_TOWER) });
                                 
-                                if (targetTower) {
+                                //if (targetTower) {
                                     if (creep.rangedAttack(targetTower) == ERR_NOT_IN_RANGE) {
                                         CombatMovement(targetTower);
                                     } else {
@@ -373,7 +373,7 @@ let roleAstartes = {
                                     } else {
                                         creep.attack(targetTower);
                                     }   
-                                } else {
+                                //} else {
                                     if (creep.rangedAttack(targetStructure) == ERR_NOT_IN_RANGE) {
                                         CombatMovement(targetStructure);
                                     } else {
@@ -385,7 +385,7 @@ let roleAstartes = {
                                     } else {
                                         creep.attack(targetStructure);
                                     }
-                                }
+                               // }
                             } else if (!targetCreep && !targetStructure) {
                                 creep.memory.queue = creep.memory.queue + 1;
                                 Game.notify('Отряд крипов из сквада ' + creep.memory.squad + ' завершил все задачи в комнате '+ creep.pos.roomName + ' и вызвал транспорт '+ Game.time, 0);
