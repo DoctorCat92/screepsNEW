@@ -5,14 +5,14 @@ var roleRepairer = {
         
         if (creep.carry.energy == 0) {
             creep.memory.bag = 'empty';
-            creep.memory.repairer == false;
-            creep.memory.building == false;
+            creep.memory.repairer = false;
+            creep.memory.building = false;
             delete creep.memory.target;
         }
 
         if(creep.memory.repairer && (creep.carry.energy == 0 || creep.memory.target == undefined)) {
             creep.memory.repairer = false;
-            creep.memory.building == false;
+            creep.memory.building = false;
             creep.say('harvesting');
 	    }
 	    let Targets = creep.room.find(FIND_STRUCTURES, {filter: structure => structure.hits < structure.hitsMax}); 
@@ -20,14 +20,14 @@ var roleRepairer = {
 	        Targets.sort((a,b) => a.hits - b.hits);
 	        creep.memory.target = Targets[0].id;
 	        creep.memory.repairer = true;
-	        creep.memory.building == false;
+	        creep.memory.building = false;
 	        creep.memory.bag = 'full'
 	        creep.say('repairing');
 	    }
 	    
 	    if (Targets.length == 0 && creep.carry.energy == creep.carryCapacity && !creep.memory.repairer && !creep.memory.building) {
 	        creep.memory.building = true;
-	        creep.memory.repairer == false;
+	        creep.memory.repairer = false;
 	        creep.memory.bag = 'full'
 	        creep.say('building');
 	    }
