@@ -366,13 +366,13 @@ let roleAstartes = {
                                         CombatMovement(targetTower);
                                     } else {
                                         creep.rangedAttack(targetTower);
-                                    } 
+                                    } else 
 
                                     if (creep.attack(targetTower) == ERR_NOT_IN_RANGE) {
                                         CombatMovement(targetTower);
                                     } else {
                                         creep.attack(targetTower);
-                                    }   
+                                    } else 
                                 //} else {
                                     if (creep.rangedAttack(targetStructure) == ERR_NOT_IN_RANGE) {
                                         CombatMovement(targetStructure);
