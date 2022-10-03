@@ -405,7 +405,7 @@ let roleAstartes = {
                         } else if (Range <= 4) {
 
                             let LookF = creep.room.lookAt(SquadAttackTarget);
-                            let targets = _.filter(LookF, opa => (opa.type == 'structure' && opa.structureType !== STRUCTURE_ROAD) || opa.type == 'creep');
+                            let targets = _.filter(LookF, opa => (opa.type == 'structure') || opa.type == 'creep');
                             if (targets.length > 0) {
 
                                 if (RangedAttackBodyparts > 0) {
