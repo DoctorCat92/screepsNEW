@@ -311,7 +311,7 @@ let roleAstartes = {
                             let SumSquad = SumAstartes + SumApothecary;
                             let PosCheckPoint = new RoomPosition(SquadWait.pos.x, SquadWait.pos.y, SquadWait.pos.roomName);
                             let CreepForCreckPoint = PosCheckPoint.findInRange(FIND_MY_CREEPS, 4);
-                            let time = 50;
+                            let time = 20;
 
                             if (!creep.pos.inRangeTo(SquadWait, 1)) {
                                 CombatMovement(SquadWait);
