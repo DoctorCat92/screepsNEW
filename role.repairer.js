@@ -92,11 +92,11 @@ var roleRepairer = {
                 }
                 if ((buildTarget.length == 1) && (buildTarget[0].progress >= buildTarget[0].progressTotal - 50)) {Game.notify('Creeps complited construction in room '+creep.pos.roomName, 0);}
             }
-        } creep.say('Пиписька');
+        } 
         if (!creep.memory.repairer && !creep.memory.building) {
             var sources = creep.pos.findClosestByPath(FIND_SOURCES);
             var Storage = creep.room.find(FIND_CONSTRUCTION_SITES, {filter: structure => ((structure.structureType == STRUCTURE_STORAGE) && (structure.store[RESOURCE_ENERGY] > 500000))});
-
+            creep.say('Пиписька1212');
             creep.say(Storage[0].id);
             if (Storage[0]) {
                 if(creep.withdraw(Storage[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
