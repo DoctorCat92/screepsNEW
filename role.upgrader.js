@@ -26,9 +26,9 @@ var roleUpgrader = {
               
             if (Links[3])  {
                 if(creep.withdraw(Links[3], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.travelTo(Links[3]); creep.say('hi');
+                    creep.travelTo(Links[3]); 
                 }
-            } else if (MassStorage[0]) {
+            } else if (MassStorage[0]) { creep.say('hi');
                 if (creep.room.controller.level < 8) { 
                     if(creep.withdraw(MassStorage[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         creep.travelTo(MassStorage[0]);
