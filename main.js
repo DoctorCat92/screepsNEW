@@ -173,6 +173,7 @@ module.exports.loop = function() {
             AutoBuilder: { name: 'AutoBuilder', status: true, type: 'demon', activRooms: [], priority: 2, nameModule: 'process.autoBuilder',},
             //STerminal: { name: 'Terminal', status: true, activRooms: [], priority: 2, nameModule: 'role.terminal', memory:{id:{}}},
             visual: { name: 'visual', status: true, activRooms: [], priority: 3, nameModule: 'room.visual',},
+            graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'processGraph',},
 
         }
 
