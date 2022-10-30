@@ -95,7 +95,7 @@ var processTrader = {
                 if (Res == 'pixel' || Res == 'token' || Res == 'cpuUnlock' || Res == 'accessKey') {
                     if (Game.market.deal(OrdersSort[0].id, Amount ,posTerminal) == OK) {
                         Game.notify('Куплено '+Amount+' '+OrdersSort[0].resourceType+' по цене '+OrdersSort[0].price, 0);            
-                       // Buy.remove();
+                        Buy.remove();
                     } else {console.log('Сделка завершилась кодом '+Game.market.deal(OrdersSort[0].id, OrdersSort[0].amount ,posTerminal)+' Ордер '+OrdersSort[0].id);}
                 } else {
                     if (Terminal.store[Res] >= Amount) {
