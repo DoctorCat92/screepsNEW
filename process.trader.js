@@ -75,8 +75,8 @@ var processTrader = {
         
         if (Buy && Terminal.cooldown == 0) {
             let str = Buy.name;
-            let sign  = str.indexOf('-', 3);
-            let Res = str.slice(sign+1);
+            let sign  = str.indexOf('-', 4);
+            let Res = str.slice(4, sign-1);
             let Amount = Number(str.slice(sign+1));
             let posFlag = Buy.pos.roomName;
             let posTerminal = Terminal.pos.roomName;
