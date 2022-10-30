@@ -74,6 +74,8 @@ var processTrader = {
         
         
         if (Buy && Terminal.cooldown == 0) {
+
+            //Example 'Buy pixel - 1000'
             let str = Buy.name;
             let sign  = str.indexOf('-', 4);
             let Res = str.slice(4, sign-1);
@@ -90,13 +92,11 @@ var processTrader = {
                 let OrdersSort = _.sortBy(Orders, ['price']);
                 console.log('Колличество ордеров по цене '+ Orders.length);
                 
-                
-                
                 if (Res == 'pixel' || Res == 'token' || Res == 'cpuUnlock' || Res == 'accessKey') {
                     if (Game.market.deal(OrdersSort[0].id, OrdersSort[0].amount ,posTerminal) == OK) {
                         Game.notify('Куплено '+Amount+' '+OrdersSort[0].resourceType+' по цене '+OrdersSort[0].price, 0);            
                        // Buy.remove();
-                    } 
+                    } else {console.log('Сделка завершилась кодом '+Game.market.deal(OrdersSort[0].id, OrdersSort[0].amount ,posTerminal));}
                 } else {
                     if (Terminal.store[Res] >= Amount) {
                        Buy.remove();
