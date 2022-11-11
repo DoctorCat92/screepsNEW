@@ -1,7 +1,7 @@
 module.exports.loop = function() {
 
         // Main.js logic should go here.
-        //ЧИПАЛАХ! фывфыв gggg
+        //ЧИПАЛАХ! 2.013123 фывфыв gggg
 
     var process = require('class.process');
   /**  var roleHarvester = require('role.harvester');
