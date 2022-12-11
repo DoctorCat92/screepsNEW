@@ -69,6 +69,7 @@ var processTrader = {
                 } else {
                     let Orders = Game.market.getAllOrders(order => order.resourceType == Res && order.type == ORDER_BUY);
                     let OrdersSort = _.sortBy(Orders, ['price']);
+                    console.log(" orders count "+OrdersSort.length);
                     if (OrdersSort.length > 0) {
                         let t = OrdersSort.length-1;
                             for (let i=OrdersSort.length-1; i>0 ; i--) {
