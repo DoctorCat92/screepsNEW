@@ -75,8 +75,8 @@ var processTrader = {
                                 if (Game.market.deal(OrdersSort[i].id, OrdersSort[i].amount ,posTerminal) == OK) {
                                     new RoomVisual().text('Продано '+OrdersSort[i].amount+' '+Res+' По цене '+OrdersSort[i].price, Terminal.pos.x-1, Terminal.pos.y-1, {align: 'left'}); 
                                     break;
-                                } else (console.log("code error trade "+Game.market.deal(OrdersSort[i].id, OrdersSort[i].amount ,posTerminal))) {
-                                	
+                                } else  {
+                                	 console.log("code error trade "+Game.market.deal(OrdersSort[i].id, OrdersSort[i].amount ,posTerminal));
                                 }
                             }                            
                     }
