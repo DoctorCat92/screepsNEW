@@ -52,6 +52,7 @@ var processTrader = {
                 let posFlag = Trade.pos.roomName;
                 let posTerminal = Terminal.pos.roomName;
                 let targetRoom = posTerminal;
+                console.log(Res);
                 
                 if (Res == 'pixel' || Res == 'token' || Res == 'cpuUnlock' || Res == 'accessKey') {  
                     let Orders = Game.market.getAllOrders(order => order.resourceType == Res && order.type == ORDER_BUY);
