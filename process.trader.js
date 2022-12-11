@@ -66,7 +66,17 @@ var processTrader = {
                             }                            
                     }
                 } else {
-                    
+                    let Orders = Game.market.getAllOrders(order => order.resourceType == Res && order.type == ORDER_BUY);
+                    let OrdersSort = _.sortBy(Orders, ['price']);
+                    if (OrdersSort.length > 0) {
+                        let t = OrdersSort.length-1;
+                            for (let i=OrdersSort.length-1; i>0 ; i--) {
+                                if (Game.market.deal(OrdersSort[i].id, OrdersSort[i].amount ,posTerminal) == OK) {
+                                    new RoomVisual().text('Продано '+OrdersSort[i].amount+' '+Res+' По цене '+OrdersSort[i].price, Terminal.pos.x-1, Terminal.pos.y-1, {align: 'left'}); 
+                                    break;
+                                }
+                            }                            
+                    }
                 }
                 
             }
