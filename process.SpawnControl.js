@@ -629,6 +629,9 @@ var processSpawnControl = {
         }
 
 
+        
+
+
         var MemorySquad = _.filter(Memory.army, o => o.Gathering == false && o.Replenishment == false);
 
         for (let s = 0; s < MemorySquad.length; s++) {
