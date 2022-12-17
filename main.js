@@ -199,7 +199,6 @@ module.exports.loop = function() {
                 if (TableProcess[process].activRooms.length == 0) {
                     for (let i in RoomMass) {
                         let Name = TableProcess[process].name+RoomMass[i].name;
-                        console.log('adadadadadadadad ');
                         createProcess.run(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
                     }
                 }

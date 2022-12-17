@@ -550,7 +550,7 @@ var processSpawnControl = {
                         squad: Gatherings[o].ColorSquad,
                         revival: 1,
                     };
-                    console.log('HIIIIIIIIIIII'+TablePopulation['ControlApothecary' + Gatherings[o].CheckPoint.roomName + Gatherings[o].ColorSquad].count);
+                    console.log(TablePopulation['ControlApothecary' + Gatherings[o].CheckPoint.roomName + Gatherings[o].ColorSquad].count);
                 } else if (Gatherings[o].typeCharact == false) {
                     TablePopulation['ControlAstartes' + Gatherings[o].CheckPoint.roomName + Gatherings[o].ColorSquad] =
                     {
