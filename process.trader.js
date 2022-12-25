@@ -13,6 +13,12 @@ var processTrader = {
             delete process.terminal;
         }  
         
+        let timeStr = String(Game.time);
+        let hundred = timeStr.indexOf('1',timeStr.length-3);
+        if (hundred !== -1) {
+        	//Game.room.createFlag('Trade '+Room);
+        }
+        
         
         let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
         let Buy =_.find(Game.flags, f => f.name.startsWith('Buy')); 
