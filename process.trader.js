@@ -11,7 +11,7 @@ var processTrader = {
         
         if (Terminal == null) {
             delete process.terminal;
-        }        
+        }  
         
         
         let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
@@ -35,6 +35,12 @@ var processTrader = {
                             if (OrdersSort.length > 0) {
                                // Game.market.deal(OrdersSort[Maximum].id,OrdersSort[Maximum].amount,posTerminal);
                                 console.log('Trade = '+Game.market.deal(OrdersSort[Maximum].id, OrdersSort[Maximum].amount,posTerminal));
+
+                                //Условие для автоторговли
+                                let AutoTrade = Trade.name.indexOf('Auto', 4);
+                                if (AutoTrade) {
+                                    Trade.remove();
+                                }
                             } 
                             if (OrdersSort.length == 0) {
                                 Trade.remove();

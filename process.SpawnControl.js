@@ -402,7 +402,6 @@ var processSpawnControl = {
         var SquadFlag = _.filter(Game.flags, f => f.name.startsWith('Squad'));  
 
         for (f in SquadFlag) {
-            console.log('Шлюхипратиттутки');
             if (SquadFlag[f]) {
                 let FlagPowerMining  = SquadFlag[f].name.indexOf('Squad', 0);
                 if (FlagPowerMining !== -1) {
