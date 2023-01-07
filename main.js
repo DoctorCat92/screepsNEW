@@ -164,16 +164,16 @@ module.exports.loop = function() {
             
         TableProcess = {
             //test: {name: 'test', status: true, type: 'demon', activRooms: ['W86N18'], priority: 3, nameModule: 'process.test', },
-            transference: {name: 'transference', status: false, type: 'demon', activRooms: [], priority: 3, nameModule: 'service.transference',},
-            trader: {name: 'trader', status: false, type: 'demon', activRooms: [], priority: 3, nameModule: 'service.trader',},
-            SpawnControl: { name: 'SpawnControl',  status: false, type: 'demon', activRooms: [], priority: 2, nameModule: 'service.SpawnControl', },
+            transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
+            trader: {name: 'trader', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.trader',},
+            SpawnControl: { name: 'SpawnControl',  status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.SpawnControl', },
           //  Remotes: {name: 'Remotes', status: false, type: 'demon', activRooms: ['W12N47'], priority: 2, nameModule: 'process.Remotes',},
-            Protection: {name: 'Protection', status: false, type: 'demon', activRooms: [], priority: 2,nameModule: 'service.protection',},
-            Observer: { name: 'Observer', status: false, type: 'demon', activRooms: [], priority: 2, nameModule: 'service.observer',},
-            AutoBuilder: { name: 'AutoBuilder', status: false, type: 'demon', activRooms: [], priority: 2, nameModule: 'service.autoBuilder',},
+            Protection: {name: 'Protection', status: true, type: 'service', activRooms: [], priority: 2,nameModule: 'service.protection',},
+            Observer: { name: 'Observer', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.observer',},
+            AutoBuilder: { name: 'AutoBuilder', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.autoBuilder',},
             //STerminal: { name: 'Terminal', status: true, activRooms: [], priority: 2, nameModule: 'role.terminal', memory:{id:{}}},
-            visual: { name: 'visual', status: false, activRooms: [], priority: 3, nameModule: 'room.visual',},
-            graph: { name: 'graph', status: false, activRooms: [], priority: 3, nameModule: 'service.Graph',},
+            visual: { name: 'visual', status: true, activRooms: [], priority: 3, nameModule: 'room.visual',},
+            graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
 
         }
 
