@@ -1,44 +1,12 @@
 module.exports.loop = function() {
 
-        // Main.js logic should go here.
-        //ЧИПАЛАХ! 2.013123 фывфыв gggg
 
     var process = require('class.process');
-  /**  var roleHarvester = require('role.harvester');
-    //var roomVisual = require('room.visual');
-    var roleScout = require('role.scout');
-    var roleUpgrader = require('role.upgrader');
-    var roleBuilder = require('role.builder');
-    var roleRepairer = require('role.repairer');
-    var roleDefender = require('role.defender');
-    var roleSoldier = require('role.soldier');
-    var roleInvader = require('role.invader');
-    var roleTower = require('role.tower');
-
-    var roleCarrier = require('role.carrier');
-    var roleMiner = require('role.miner');
-    var roleSupport = require('role.support');
-    var roleHealer = require('role.healer');
-    
-    var roleObserver = require('role.observer');
-    var roleTrader = require('role.trader');
-    var roleAstartes = require('role.astartes');
-    var roleApothecary = require('role.apothecary');
-    var roleDismantler = require('role.dismantler');
-  //  var rolePrimeOperator = require('role.primeOperator');
-   // var processTest = require('process.test');
-   // var processProtection = require('process.protection');
-   // var processTransference = require('process.transference');
-    //var processRemotes = require('process.remotes');
-    //var processSpawnControl = require('process.SpawnControl');
-     **/
-    //var processProtection = require('process.protection');
     var Traveler = require('Traveler');
     var roleTerminal = require('role.terminal');
     var roleSpawn = require('role.spawn');
     var rolePowerSpawn = require('role.powerSpawn');
     var Names = require('Names');
-   // var flagCreateSquad = require('flag.CreateSquad');
 
     console.log(Game.time);
 
