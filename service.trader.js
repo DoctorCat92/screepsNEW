@@ -1,4 +1,4 @@
-var processTrader = {
+var serviceTrader = {
 
     run: function(process) {
         
@@ -168,4 +168,4 @@ var processTrader = {
 }   
 
 
-module.exports = processTrader;
+module.exports = serviceTrader;

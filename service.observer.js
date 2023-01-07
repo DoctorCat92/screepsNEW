@@ -1,4 +1,4 @@
-var processObserver = {
+var serviceObserver = {
 
 
     run: function(process) {
@@ -61,4 +61,4 @@ var processObserver = {
 }   
 
 
-module.exports = processObserver;
+module.exports = serviceObserver;

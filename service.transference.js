@@ -1,4 +1,4 @@
-var processTransference = {
+var serviceTransference = {
 
     createTask: function (roomNumber, priority, source, target, type , condition) {
         let nameTask = target.id + type + priority + condition;
@@ -212,4 +212,4 @@ var processTransference = {
 }
 
 
-module.exports = processTransference;
+module.exports = serviceTransference;

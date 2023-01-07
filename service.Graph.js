@@ -1,4 +1,4 @@
-var processGraph = {
+var serviceGraph = {
     // x,y - coordinate to be displayed no the chard
     // Eneter the coordinate of the grath corners for displayed it in the room 
     run: function (process) {
@@ -6,4 +6,4 @@ var processGraph = {
     }
 }
 
-module.exports = processGraph;
+module.exports = serviceGraph;

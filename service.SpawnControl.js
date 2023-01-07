@@ -1,4 +1,4 @@
-var processSpawnControl = {
+var serviceSpawnControl = {
         
 
     run: function (process) {
@@ -765,7 +765,7 @@ var processSpawnControl = {
 }
 
 
-module.exports = processSpawnControl;
+module.exports = serviceSpawnControl;
 
 
 
