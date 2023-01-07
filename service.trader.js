@@ -44,7 +44,7 @@ var serviceTrader = {
 
                                 //Условие для автоторговли
                                 let AutoTrade = Trade.name.indexOf('Auto', 4);
-                                if (AutoTrade) {
+                                if (AutoTrade !== -1) {
                                     Trade.remove();
                                 }
                             } 
