@@ -17,7 +17,7 @@ module.exports.loop = function() {
     
     for (let i in ProcessList) {
         var ClassProcess = new process(ProcessList[i].name,ProcessList[i].priority);
-        ClassProcess.start();
+        //ClassProcess.start();
     }
     
         
