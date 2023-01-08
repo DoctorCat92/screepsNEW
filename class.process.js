@@ -11,7 +11,7 @@ class process {
         }
 
         if (Memory.processor[this.name] === undefined) { 
-            Memory.processor[this.name] = {Name: this.name, Opt:this.opt, folder:{}, time: 0};
+            Memory.processor[this.name] = {Name: this.name,  folder:{}, time: 0}; //Opt:this.opt,
         }
     }
 
