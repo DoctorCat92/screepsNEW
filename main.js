@@ -10,15 +10,7 @@ module.exports.loop = function() {
 
     console.log(Game.time);
 
-    ProcessList = {
-        Testing: {name: 'Testing', priority: 2},
-        //Carrier: {name: 'carrier', priority: 2},
-    }
     
-    for (let i in ProcessList) {
-        var ClassProcess = new process(ProcessList[i].name,ProcessList[i].priority);
-        //ClassProcess.start();
-    }
     
         
         
@@ -56,7 +48,23 @@ module.exports.loop = function() {
          // Class for crerate process 
          
           
+         ProcessList = {
+           // Testing: {name: 'Testing', priority: 2},
+            //transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
+            //transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
+            //trader: {name: 'trader', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.trader',},
+            //SpawnControl: { name: 'SpawnControl',  status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.SpawnControl', },
+            //Protection: {name: 'Protection', status: true, type: 'service', activRooms: [], priority: 2,nameModule: 'service.protection',},
+            //Observer: { name: 'Observer', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.observer',},
+            //AutoBuilder: { name: 'AutoBuilder', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.autoBuilder',},
+            //visual: { name: 'visual', status: true, activRooms: [], priority: 3, nameModule: 'room.visual',},
+            //graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
+        }
         
+        for (let i in ProcessList) {
+            var ClassProcess = new process(ProcessList[i].name,ProcessList[i].priority);
+            //ClassProcess.start();
+        }
     //   
             
         TableProcess = {
