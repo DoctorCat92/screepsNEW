@@ -18,7 +18,7 @@ class process {
         }
 
         if (Memory.processor[this.Name] === undefined) { 
-            Memory.processor[this.Name] = {Name: Name,NameProcess: Name, NameModule: nameModule, Status: true, Room: roomNumber, BusyTarget:[], List:{}, time: 0, Memory:memory}; //Opt:this.opt,
+            Memory.processor[this.Name] = {Name: Name,NameProcess: Name, Prority: prority, NameModule: nameModule, Status: true, Room: roomNumber, BusyTarget:[], List:{}, time: 0, Memory:memory}; //Opt:this.opt,
         }
     }
 
