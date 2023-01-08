@@ -111,17 +111,17 @@ module.exports.loop = function() {
         let cpuCounter = 0;      
         
         for (let i in Processor) {
-           // try {
+            try {
             let process = require(Processor[i].NameModule); 
             process.run(Processor[i]);
             t = Game.cpu.getUsed();
             result = Math.floor((t-cpuCounter) * 100) / 100;
             console.log(result+' | '+Math.floor(t * 100) / 100+' '+i);
             cpuCounter = t;
-           // } catch (error) {
+            } catch (error) {
               // console.log(error+' '+Processor[i]);
               // Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
-           // }
+            }
         }
         
         for(var name in Game.creeps) {
