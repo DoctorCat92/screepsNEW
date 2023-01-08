@@ -13,7 +13,7 @@ module.exports.loop = function() {
     
     
         
-        
+        // testing Android 
         
         //let ResForTarget = _.find(Target, o => o.Resource >= Memory.processor['transference'+creep.memory.roomNumber]);
         let FlagErr = Game.flags.FlagErr;
