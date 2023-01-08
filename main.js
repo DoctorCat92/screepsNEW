@@ -11,7 +11,7 @@ module.exports.loop = function() {
     console.log(Game.time);
 
     ProcessList = {
-        //Testing: {name: 'Testing', priority: 2},
+        Testing: {name: 'Testing', priority: 2},
         //Carrier: {name: 'carrier', priority: 2},
     }
     
@@ -19,59 +19,9 @@ module.exports.loop = function() {
         var ClassProcess = new process(ProcessList[i].name,ProcessList[i].priority);
         ClassProcess.start();
     }
-
-
-    if(Game.cpu.bucket == 10000) {
-        Game.cpu.generatePixel();
-    }
-
-
-
-    // FillingTheTerminal - 
-    // PickupTarget - 
-    // CreateSoldiers1 - 
-    // MoveSupport - 
-    // Game.structures['5ea5ac9eede95210953fc985'].launchNuke(new RoomPosition(39,23, 'W12N38')); - 
-        
-      /**  let RemoveCreep =_.filter(Game.flags, i => i.name.startsWith('RemoveCreep'));
-        
-        if (RemoveCreep) {
-            let posFlag = RemoveCreep[0].pos.roomName;
-            for(var name in Game.creeps) {
-                let creep = Game.creeps[name];
-                if (creep.pos.roomName == posFlag) {
-                    creep.suicide();
-                }
-            }
-        } **/
-        
-        let TradeOff =_.find(Game.flags, i => i.name.startsWith('TradeOff')); 
-
-        if (TradeOff) {
-            let Trade =_.filter(Game.flags, i => i.name.startsWith('Trade'));
-            for (i=0; i<Trade.length; i++) {
-                Trade[i].remove();
-            }
-        }
-
-        let Eye = Game.flags.Eye;
-        
-        if (Eye) {
-            let Obj = Game.rooms[Eye.pos.roomName].lookAt(Eye);
-            
-            for(let i=0; i<Obj.length;i++) {
-                new RoomVisual(Eye.pos.roomName).rect(Eye.pos.x, Eye.pos.y, 5, 4, {fill:'#000000', opacity: 0.5});
-                new RoomVisual(Eye.pos.roomName).text(Obj[i] , Eye.pos.x+i, Eye.pos.y+i, {align: 'left'});     
-            }
-        }
     
         
-        for(var name in Memory.creeps) {
-            if(!Game.creeps[name]) {
-                delete Memory.creeps[name];
-                //console.log('Clearing non-existing creep memory:', name);
-            }
-        }
+        
         
         //let ResForTarget = _.find(Target, o => o.Resource >= Memory.processor['transference'+creep.memory.roomNumber]);
         let FlagErr = Game.flags.FlagErr;
@@ -99,33 +49,26 @@ module.exports.loop = function() {
     
         
         // ÃÂÃÂÃÂÃÂ±ÃÂÃÂÃÂÃÂµÃÂÃÂºÃÂÃÂ - ÃÂÃÂ¿ÃÂÃÂ¾ÃÂÃÂ¿ÃÂÃÂÃÂÃÂ»ÃÂÃÂÃÂÃÂÃÂÃÂ¸ÃÂÃÂ
-        var RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
-        var RoomMassOpt = ['W86N18','W86N17','W87N18'];
+        
 
+        
+ 
+         // Class for crerate process 
+         class User {
 
-        RoomsRoles = {
-            
-             //hadsdw : { role: 'dismantler', roomNumber: 'E22N12', priority: 1, count: 0, staffed: [], charact: [WORK,WORK,WORK,CARRY,MOVE,WORK], options: 2, }, 
-            
-             //support: { role: 'support',    roomNumber: 'W19S58', priority: 3, count: 0, staffed: [], charact: [CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,], options: 5, }, //CARRY,CARRY,WORK,WORK,WORK,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE
-               //support: { role: 'support',    roomNumber: 'W12N47', options: 3, priority: 1, count: 0, staffed: [], charact: [CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE,CARRY,MOVE] }, //CARRY,CARRY,WORK,WORK,WORK,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE
-            
-             //support2: { role: 'support',    roomNumber: 'W19S59', priority: 3, count: 0, staffed: [], charact: [CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,], options: 5, },
-             //support3: { role: 'support',    roomNumber: 'W18S59', priority: 3, count: 2, staffed: [], charact: [MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], options: 1, },
-             // support1: { role: 'upgrader',   roomNumber: 'W19S58', priority: 3, count: 0, staffed: [], charact: [MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], options: 3, }, 
-              
-        }
-        
-        
-        var Invader = Game.flags.Invader;
-
-        if (Invader) {
-           RoomsRoles['invader1'] = { role: 'invader', roomNumber: 'W12N47', priority: 3, count: 1, staffed: [], charact: [MOVE,CLAIM] , options: 1, };
-        }
-        
-         // ÃÂ½ÃÂ°ÃÂ±ÃÂ¸ÃÂ²ÃÂ° ÃÂºÃÂÃÂ¸ÃÂ¿ÃÂ°  
-        
-        
+            constructor(name) {
+              this.name = name;
+            }
+          
+            sayHi() {
+              alert(this.name);
+            }
+          
+          }
+          
+          // Использование:
+          let user = new User("Иван");
+          user.sayHi();
           
         
     //   
@@ -149,7 +92,8 @@ module.exports.loop = function() {
        // var roomVisual = require('room.visual');
         //roomVisual.roomNumber(process.Room);
         
-    // 
+        var RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
+        var RoomMassOpt = ['W86N18','W86N17','W87N18'];
         var createProcess = require('createProcess');
 
         for (let process in TableProcess) {
@@ -285,6 +229,41 @@ module.exports.loop = function() {
 
              
         }
+
+
+        let Eye = Game.flags.Eye;
+        
+        if (Eye) {
+            let Obj = Game.rooms[Eye.pos.roomName].lookAt(Eye);
+            
+            for(let i=0; i<Obj.length;i++) {
+                new RoomVisual(Eye.pos.roomName).rect(Eye.pos.x, Eye.pos.y, 5, 4, {fill:'#000000', opacity: 0.5});
+                new RoomVisual(Eye.pos.roomName).text(Obj[i] , Eye.pos.x+i, Eye.pos.y+i, {align: 'left'});     
+            }
+        }
+
+
+        for(var name in Memory.creeps) {
+            if(!Game.creeps[name]) {
+                delete Memory.creeps[name];
+                //console.log('Clearing non-existing creep memory:', name);
+            }
+        }
+
+
+        if(Game.cpu.bucket == 10000) {
+            Game.cpu.generatePixel();
+        }
+    
+            
+            let TradeOff =_.find(Game.flags, i => i.name.startsWith('TradeOff')); 
+    
+            if (TradeOff) {
+                let Trade =_.filter(Game.flags, i => i.name.startsWith('Trade'));
+                for (i=0; i<Trade.length; i++) {
+                    Trade[i].remove();
+                }
+            }
         
         
         
