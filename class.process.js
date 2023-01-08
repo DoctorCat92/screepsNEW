@@ -4,12 +4,12 @@ class process {
         this.Name = Name;
         this.NameProcess = Name+roomNumber;
         this.nameModule = nameModule;
-        this.Status = state, 
-        this.Room = roomNumber, 
-        this.Memory= memory,
-        this.BusyTarget = [], 
-        this.List = {}, 
-        this.time = 0,
+        this.Status = state;
+        this.Room = roomNumber; 
+        this.Memory= memory;
+        this.BusyTarget = []; 
+        this.List = {};
+        this.time = 0;
     }
 
     start () { 
