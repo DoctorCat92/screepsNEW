@@ -1,5 +1,9 @@
 var serviceTransference = {
 
+    priority: 1,
+    type: 'service',
+    
+
     createTask: function (roomNumber, priority, source, target, type , condition) {
         let nameTask = target.id + type + priority + condition;
         let nameProcess = 'transference'+roomNumber; 

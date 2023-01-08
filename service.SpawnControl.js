@@ -1,5 +1,7 @@
 var serviceSpawnControl = {
-        
+    
+    priority: 1,
+    type: 'service',
 
     run: function (process) {
     

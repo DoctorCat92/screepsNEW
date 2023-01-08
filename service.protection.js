@@ -1,5 +1,8 @@
 var serviceProtection = {
 
+    priority: 1,
+    type: 'service',
+
     run: function(process) {
         
          var Towers = Game.rooms[process.Room].find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_TOWER)});

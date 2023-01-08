@@ -1,6 +1,8 @@
 var serviceObserver = {
 
-
+    priority: 1,
+    type: 'service',
+    
     run: function(process) {
 
         /**

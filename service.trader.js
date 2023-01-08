@@ -1,5 +1,8 @@
 var serviceTrader = {
 
+    priority: 1,
+    type: 'service',
+    
     run: function(process) {
         
         if (process.terminal === undefined) {
