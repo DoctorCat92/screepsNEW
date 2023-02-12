@@ -5,7 +5,7 @@ class process {
         //this.NameProcess = Name+roomNumber;
         this.nameModule = nameModule;
         this.Status = state;
-        this.Room = roomNumber; 
+        this.roomNumber = roomNumber; 
         this.Memory= memory;
         this.BusyTarget = []; 
         this.List = {};
@@ -18,7 +18,7 @@ class process {
         }
 
         if (Memory.processor[this.Name] === undefined) { 
-            Memory.processor[this.Name] = {Name: Name,NameProcess: Name, Prority: prority, NameModule: nameModule, Status: true, Room: roomNumber, BusyTarget:[], List:{}, time: 0, Memory:memory}; //Opt:this.opt,
+            Memory.processor[this.Name] = {Name: this.Name,NameProcess: this.Name, Prority: this.prority, NameModule: this.nameModule, Status: this.Status, Room: this.roomNumber, BusyTarget:[], List:{}, time: 0, Memory:this.}; //Opt:this.opt,
         }
     }
 
