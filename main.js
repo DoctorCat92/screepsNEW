@@ -60,7 +60,8 @@ module.exports.loop = function() {
         
         var RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
         var RoomMassOpt = ['W86N18','W86N17','W87N18'];
-        var createProcess = require('createProcess');
+        //var createProcess = require('createProcess');
+        var createProcess = require('class.process');
 
         for (let process in TableProcess) {
             if (TableProcess[process].status == true) {
@@ -69,7 +70,7 @@ module.exports.loop = function() {
                         for (let p in RoomMass) {
                             let Name = TableProcess[process].name+TableProcess[process].activRooms[p];
                             console.log('TESTING '+Name);
-                            createProcess.run(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                            createProcess.start(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
                         }
                     }
                 }
@@ -77,7 +78,7 @@ module.exports.loop = function() {
                 if (TableProcess[process].activRooms.length == 0) {
                     for (let i in RoomMass) {
                         let Name = TableProcess[process].name+RoomMass[i].name;
-                        createProcess.run(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
+                        createProcess.start(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
                     }
                 }
 
