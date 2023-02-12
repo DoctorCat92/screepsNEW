@@ -11,7 +11,6 @@ module.exports.loop = function() {
     console.log(Game.time);
 
     
-        //let ResForTarget = _.find(Target, o => o.Resource >= Memory.processor['transference'+creep.memory.roomNumber]);
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
             let Creeps = _.filter(Game.creeps, o=> o.memory.options == 1);
@@ -22,46 +21,23 @@ module.exports.loop = function() {
             }
         }        
       
-        
-        // ÃÂÃÂÃÂÃÂ°ÃÂÃÂ¹ÃÂÃÂ¼ÃÂÃÂµÃÂÃÂÃÂÃÂ 
         var Time = Game.time;
         console.log('Game Time = ',Time);
         if (Time == 25951921) {
             Game.rooms['W85N20'].createFlag(44,16 , 'MoveToRaid');
         }
 
-       /** var KillCreeps = _.filter(Game.creeps, creep => creep.memory.role == 'support');
-        for (var i=0;i < KillCreeps.length;i++) {
-            KillCreeps[i].suicide();
-        }**/
-    
-        
-        // ÃÂÃÂÃÂÃÂ±ÃÂÃÂÃÂÃÂµÃÂÃÂºÃÂÃÂ - ÃÂÃÂ¿ÃÂÃÂ¾ÃÂÃÂ¿ÃÂÃÂÃÂÃÂ»ÃÂÃÂÃÂÃÂÃÂÃÂ¸ÃÂÃÂ asdadssd
-        
 
-        
- 
-         // Class for crerate process 
          
           
          ProcessList = {
-           // Testing: {name: 'Testing', priority: 2},
-            //transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
-            //transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
-            //trader: {name: 'trader', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.trader',},
-            //SpawnControl: { name: 'SpawnControl',  status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.SpawnControl', },
-            //Protection: {name: 'Protection', status: true, type: 'service', activRooms: [], priority: 2,nameModule: 'service.protection',},
-            //Observer: { name: 'Observer', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.observer',},
-            //AutoBuilder: { name: 'AutoBuilder', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.autoBuilder',},
-            //visual: { name: 'visual', status: true, activRooms: [], priority: 3, nameModule: 'room.visual',},
-            //graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
+          
         }
         
         for (let i in ProcessList) {
             var ClassProcess = new process(ProcessList[i].name,ProcessList[i].priority);
             //ClassProcess.start();
         }
-    //   
             
         TableProcess = {
             //test: {name: 'test', status: true, type: 'demon', activRooms: ['W86N18'], priority: 3, nameModule: 'process.test', },
