@@ -1,6 +1,5 @@
 module.exports.loop = function() {
 
-
     var classProcess = require('class.process');
     var Traveler = require('Traveler');
     var roleTerminal = require('role.terminal');
@@ -10,7 +9,6 @@ module.exports.loop = function() {
 
     console.log(Game.time);
 
-    
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
             let Creeps = _.filter(Game.creeps, o=> o.memory.options == 1);
@@ -40,15 +38,12 @@ module.exports.loop = function() {
         }
             
         TableProcess = {
-            //test: {name: 'test', status: true, type: 'demon', activRooms: ['W86N18'], priority: 3, nameModule: 'process.test', },
             transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
             trader: {name: 'trader', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.trader',},
             SpawnControl: { name: 'SpawnControl',  status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.SpawnControl', },
-          //  Remotes: {name: 'Remotes', status: false, type: 'demon', activRooms: ['W12N47'], priority: 2, nameModule: 'process.Remotes',},
             Protection: {name: 'Protection', status: true, type: 'service', activRooms: [], priority: 2,nameModule: 'service.protection',},
             Observer: { name: 'Observer', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.observer',},
             AutoBuilder: { name: 'AutoBuilder', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.autoBuilder',},
-            //STerminal: { name: 'Terminal', status: true, activRooms: [], priority: 2, nameModule: 'role.terminal', memory:{id:{}}},
             visual: { name: 'visual', status: true, activRooms: [], priority: 3, nameModule: 'room.visual',},
             graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
 
