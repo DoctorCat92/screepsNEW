@@ -2,7 +2,7 @@ class process {
 
     constructor(Name,nameModule,state,prority,roomNumber,memory) {
         this.Name = Name;
-        this.NameProcess = Name+roomNumber;
+        //this.NameProcess = Name+roomNumber;
         this.nameModule = nameModule;
         this.Status = state;
         this.Room = roomNumber; 
