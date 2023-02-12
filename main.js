@@ -62,7 +62,7 @@ module.exports.loop = function() {
         var RoomMassOpt = ['W86N18','W86N17','W87N18'];
         var createProcess = require('createProcess');
         //var createProcess = require('class.process');
-
+        let newProcess = new process
         for (let process in TableProcess) {
             if (TableProcess[process].status == true) {
                 if (TableProcess[process].activRooms.length > 0) {
@@ -70,7 +70,9 @@ module.exports.loop = function() {
                         for (let p in RoomMass) {
                             let Name = TableProcess[process].name+TableProcess[process].activRooms[p];
                             console.log('TESTING '+Name);
-                            createProcess.run(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                            //createProcess.run(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                            let newProcess = new process(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                            newProcess.start();
                         }
                     }
                 }
@@ -78,7 +80,9 @@ module.exports.loop = function() {
                 if (TableProcess[process].activRooms.length == 0) {
                     for (let i in RoomMass) {
                         let Name = TableProcess[process].name+RoomMass[i].name;
-                        createProcess.run(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
+                        //createProcess.run(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
+                        let newProcess = new process(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                        newProcess.start();
                     }
                 }
 
