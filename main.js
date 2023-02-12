@@ -11,10 +11,6 @@ module.exports.loop = function() {
     console.log(Game.time);
 
     
-    
-        
-        // testing Android 
-       //// Testing home pc 
         //let ResForTarget = _.find(Target, o => o.Resource >= Memory.processor['transference'+creep.memory.roomNumber]);
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
