@@ -62,7 +62,6 @@ module.exports.loop = function() {
         var RoomMassOpt = ['W86N18','W86N17','W87N18'];
         var createProcess = require('createProcess');
         //var createProcess = require('class.process');
-        let newProcess = new process
         for (let process in TableProcess) {
             if (TableProcess[process].status == true) {
                 if (TableProcess[process].activRooms.length > 0) {
