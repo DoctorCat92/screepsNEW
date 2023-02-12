@@ -1,7 +1,7 @@
 module.exports.loop = function() {
 
 
-    var process = require('class.process');
+    var classProcess = require('class.process');
     var Traveler = require('Traveler');
     var roleTerminal = require('role.terminal');
     var roleSpawn = require('role.spawn');
@@ -71,7 +71,7 @@ module.exports.loop = function() {
                             let Name = TableProcess[process].name+TableProcess[process].activRooms[p];
                             console.log('TESTING '+Name);
                             //createProcess.run(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
-                            let newProcess = new process(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                            let newProcess = new classProcess(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
                             newProcess.start();
                         }
                     }
@@ -81,7 +81,7 @@ module.exports.loop = function() {
                     for (let i in RoomMass) {
                         let Name = TableProcess[process].name+RoomMass[i].name;
                         //createProcess.run(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
-                        let newProcess = new process(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
+                        let newProcess = new classProcess(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
                         newProcess.start();
                     }
                 }
