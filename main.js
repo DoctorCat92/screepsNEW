@@ -6,8 +6,8 @@ module.exports.loop = function() {
     var roleSpawn = require('role.spawn');
     var rolePowerSpawn = require('role.powerSpawn');
     var Names = require('Names');
-
-    console.log(Game.time);
+   //test for work
+   console.log(Game.time);
 
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
