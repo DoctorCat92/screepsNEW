@@ -21,6 +21,14 @@ var serviceTrader = {
         if (hundred !== -1) {
         	//Game.room.createFlag('Trade '+Room);
         }
+
+
+
+        let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
+        let Buy =_.find(Game.flags, f => f.name.startsWith('Buy')); 
+        
+        
+        
         
         if (Trade.length < 1) {
             if (Terminal.store.getCapacity() >= 100000) {
@@ -29,9 +37,6 @@ var serviceTrader = {
         }
         
         
-        
-        let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
-        let Buy =_.find(Game.flags, f => f.name.startsWith('Buy')); 
         
         if (Trade && Terminal.cooldown == 0) {
             let posFlag = Trade.pos.roomName; 
