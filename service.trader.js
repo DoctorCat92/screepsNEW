@@ -23,8 +23,7 @@ var serviceTrader = {
         }
 
         if (Terminal.store.getCapacity() >= 100000) {
-            randomID = Math.random() * 100
-            Game.rooms[Terminal.pos.roomName].createFlag(30, 30, 'Trade'+randomID);
+            Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Flag1');
         }
         
         
@@ -34,7 +33,7 @@ var serviceTrader = {
         if (Trade && Terminal.cooldown == 0) {
             let posFlag = Trade.pos.roomName; 
             
-            let posTerminal = w;
+            let posTerminal = Terminal.pos.roomName;
             let targetRoom = posTerminal;
             let str = Trade.name;
             let sign  = str.indexOf('-', 4);
