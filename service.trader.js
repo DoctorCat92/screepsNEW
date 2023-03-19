@@ -24,7 +24,7 @@ var serviceTrader = {
 
         if (Terminal.store.getCapacity() >= 100000) {
             randomID = Math.random() * 100
-            Game.rooms[Room]createFlag(5, 12, 'Trade'+randomID);
+            Game.rooms[Room]createFlag(30, 30, 'Trade'+randomID);
         }
         
         
