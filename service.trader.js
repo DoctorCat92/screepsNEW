@@ -21,10 +21,13 @@ var serviceTrader = {
         if (hundred !== -1) {
         	//Game.room.createFlag('Trade '+Room);
         }
-
-        if (Terminal.store.getCapacity() >= 100000) {
-            Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Flag1');
+        
+        if (!Trade) {
+            if (Terminal.store.getCapacity() >= 100000) {
+                Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Flag1');
+            }
         }
+        
         
         
         let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
