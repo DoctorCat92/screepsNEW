@@ -22,7 +22,7 @@ var serviceTrader = {
         	//Game.room.createFlag('Trade '+Room);
         }
         
-        if (!Trade) {
+        if (Trade.length < 1) {
             if (Terminal.store.getCapacity() >= 100000) {
                 Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Flag1');
             }
