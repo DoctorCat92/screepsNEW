@@ -29,6 +29,7 @@ var serviceTrader = {
         
         
         
+        // trade if resourse > 100k
         if (Trade) {
             if (Trade.length < 1) {
                 if (Terminal.store.getCapacity() >= 100000) {
