@@ -30,11 +30,11 @@ var serviceTrader = {
         
         
         // trade if resourse > 100k
-        if (Trade) {
-            if (Trade.length < 1) {
-                if (Terminal.store.getCapacity() >= 100000) {
+        if (!Trade) {
+            if (Terminal.store.getCapacity() >= 100000) {
+                
                     Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Flag1');
-                }
+                
             }
         }
             
