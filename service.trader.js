@@ -32,9 +32,8 @@ var serviceTrader = {
         // trade if resourse > 100k
         if (!Trade) {
             if (Terminal.store.getCapacity() >= 100000) {
-                
-                    Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Flag1');
-                
+                let random = Math.floor(Math.random() * 10000) + 1;
+                Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Trade'+random );
             }
         }
             
