@@ -455,7 +455,7 @@ let roleAstartes = {
                                     new RoomVisual(creep.pos.roomName).text('% '+Percent, targetBanks.pos.x-2, targetBanks.pos.y-5, {align: 'left'}); 
                                     if (creep.memory.PersentHit !== undefined) {
                                         let OldPersent = creep.memory.PersentHit-Percent;
-                                        new RoomVisual(creep.pos.roomName).text('% '+OldPersent, targetBanks.pos.x-2, targetBanks.pos.y-4, {align: 'left'}); 
+                                        new RoomVisual(creep.pos.roomName).text('%onHit '+OldPersent, targetBanks.pos.x-2, targetBanks.pos.y-4, {align: 'left'}); 
                                     }
                                     creep.memory.PersentHit = Percent;
                                     //выбор частей тела
