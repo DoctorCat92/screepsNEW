@@ -452,7 +452,7 @@ let roleAstartes = {
                                     
                                     new RoomVisual(creep.pos.roomName).rect(targetBanks.pos.x-2.5, targetBanks.pos.y-7, 5, 4, {fill:'#000000', opacity: 0.5});
                                     new RoomVisual(creep.pos.roomName).text('hits '+targetBanks.hits, targetBanks.pos.x-2, targetBanks.pos.y-6, {align: 'left'}); 
-                                    new RoomVisual(creep.pos.roomName).text('% '+PercentHits, targetBanks.pos.x-2, targetBanks.pos.y-5, {align: 'left'}); 
+                                    new RoomVisual(creep.pos.roomName).text('% '+Percent, targetBanks.pos.x-2, targetBanks.pos.y-5, {align: 'left'}); 
                                     if (creep.memory.hitsPowerBank !== undefined) {
                                         
                                         new RoomVisual(creep.pos.roomName).text('% '+Percent, targetBanks.pos.x-2, targetBanks.pos.y-4, {align: 'left'}); 
