@@ -447,7 +447,7 @@ let roleAstartes = {
                                     let RangedBodyparts = creep.getActiveBodyparts(RANGED_ATTACK);
                                     let AttackBodyparts = creep.getActiveBodyparts(ATTACK);
                                     let AllAttackBodyparts = _.filter(creep.body, a => a.type == ATTACK || a.type == RANGED_ATTACK);
-                                    let Percent = Math.round((targetBanks.hits/targetBanks.hitsMax)*1000)/100;
+                                    let Percent = Math.round((targetBanks.hits/targetBanks.hitsMax)*100)/100;
                                     // Графонистые плюшки
                                     
                                     new RoomVisual(creep.pos.roomName).rect(targetBanks.pos.x-2.5, targetBanks.pos.y-7, 5, 4, {fill:'#000000', opacity: 0.5});
