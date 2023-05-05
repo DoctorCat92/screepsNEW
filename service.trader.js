@@ -19,7 +19,7 @@ var serviceTrader = {
             delete process.terminal;
         }  
         //       ---------- Каждыую первую секунду создать флаг
-        let timeStr = String(Game.time);
+        let timeStr = toString(Game.time);
         console.log('Часики хуясики ',timeStr.length-5);
         let hundred = timeStr.indexOf('1',timeStr.length);
         if (hundred !== -1) {
