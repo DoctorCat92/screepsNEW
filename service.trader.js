@@ -20,7 +20,7 @@ var serviceTrader = {
         }  
         //       ---------- Каждыую первую секунду создать флаг
         let timeStr = Game.time.toString();
-        console.log('Часики хуясики ',timeStr.length-5);
+        console.log('Часики хуясики ',timeStr.charAt(3));
         let hundred = timeStr.indexOf('1',timeStr.length);
         if (hundred !== -1) {
         	// trade if resourse > 100k
