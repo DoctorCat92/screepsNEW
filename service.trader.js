@@ -5,6 +5,9 @@ var serviceTrader = {
     
     run: function(process) {
         
+
+        //--------------Мусорные функции---------------------
+
         if (process.terminal === undefined) {
             let FindTerminal = _.find(Game.structures, s => s.structureType == STRUCTURE_TERMINAL && s.pos.roomName == process.Room);
             process.terminal = {id: FindTerminal.id};
@@ -15,23 +18,23 @@ var serviceTrader = {
         if (Terminal == null) {
             delete process.terminal;
         }  
-        
+        //       ---------- Каждыую первую секунду создать флаг
         let timeStr = String(Game.time);
         let hundred = timeStr.indexOf('1',timeStr.length-3);
         if (hundred !== -1) {
         	//Game.room.createFlag('Trade '+Room);
         }
 
+        //---------------------------------------------------
+
 
 
         let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
         let Buy =_.find(Game.flags, f => f.name.startsWith('Buy')); 
         
-        
-        
         // trade if resourse > 100k
         if (!Trade) {
-            if (Terminal.store.getCapacity() >= 100000) {
+            if (Terminal.store.getCapacity() >= 150000) {
                 let random = Math.floor(Math.random() * 10000) + 1;
                 Game.rooms[ Terminal.pos.roomName].createFlag(5, 12, 'Trade '+random );
             }
