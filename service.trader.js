@@ -22,7 +22,6 @@ var serviceTrader = {
         let Trade =_.find(Game.flags, i => i.name.startsWith('Trade') && i.pos.roomName == Terminal.pos.roomName); 
         let Buy =_.find(Game.flags, f => f.name.startsWith('Buy')); 
         let timeStr = Game.time.toString();
-        console.log('Часики хуясики ',timeStr.charAt(timeStr.length-1));
         let hundred = timeStr.indexOf('1',timeStr.length-1);
         if (hundred !== -1) {
         	// trade if resourse > 100k
