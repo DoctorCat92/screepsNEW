@@ -138,3 +138,4 @@ var GatheringAstartes = {
         }
     }
 }
+module.export = GatheringAstartes;
