@@ -657,7 +657,7 @@ var serviceSpawnControl = {
 
 
 
-
+        //Таймер проверки , запускать функции ниже не кажый тик, а через 2. Это для уменьшения уменьшения CPU.
 
         if (process.time < 2) {
             process.time = process.time + 1;
@@ -665,14 +665,14 @@ var serviceSpawnControl = {
 
             var RolesRoom = _.filter(TablePopulation, obj => obj.roomNumber == process.Room);
 
-            //
+            //--------Подсчёт крипов и создание записи в памяти о создании крипа
             
             for (let key in RolesRoom) {
 
-                var MemoryRoles = _.filter(process.List, o => o.role == RolesRoom[key].role && o.options == RolesRoom[key].options); //&& o.options == RolesRoom[i].options
+                var MemoryRoles = _.filter(process.List, o => o.role == RolesRoom[key].role && o.options == RolesRoom[key].options); 
                 var SumCreeps = _.sum(Game.creeps, creep => creep.memory.role == RolesRoom[key].role && creep.memory.roomNumber == process.Room && creep.memory.options == RolesRoom[key].options);
                 
-                if ((MemoryRoles.length + SumCreeps) < RolesRoom[key].count) { //MemoryRoles.length + 
+                if ((MemoryRoles.length + SumCreeps) < RolesRoom[key].count) { 
                     if (SumCreeps < RolesRoom[key].count) {
                         const CreepName = 'creepID-' + `f${(~~(Math.random() * 1e8)).toString(16)}`;
                         process.List[CreepName] = RolesRoom[key];
@@ -681,9 +681,9 @@ var serviceSpawnControl = {
                 }
             }
 
-            
-            //const SecondPriorityMemory = _.filter(process.List, o => o.priority == 2);
-            //const ThirdPriorityMemory = _.filter(process.List, o => o.priority == 3);
+
+
+           //-------------- Отправка крипов на спавн, из памяти процесса
 
             for (let i=1; i < 4; i++) {
                 let FirstPriorityMemory = _.filter(process.List, o => o.priority == i);
@@ -702,37 +702,9 @@ var serviceSpawnControl = {
                     }
                 }
             }
-             /**else
+             
+            //--------------- Нулевой приоритет для солдат
 
-                if (SecondPriorityMemory.length > 0) {
-                    var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
-                    for (var k = 0; k < MassSpawn.length; k++) {
-                        for (var q = 0; q < SecondPriorityMemory.length; q++) {
-                            
-                            let newName = 'Worker' + Game.time;
-                           
-                            if (Game.spawns[MassSpawn[k].name].spawnCreep(SecondPriorityMemory[0].charact, newName, { memory: { role: SecondPriorityMemory[0].role, roomNumber: process.Room, options: SecondPriorityMemory[0].options, SpawninigTime: SecondPriorityMemory[0].charact.length * 3 } }) == OK) {
-                                delete Memory.processor["SpawnControl" + process.Room].List[SecondPriorityMemory[q].name];
-                            }
-                        }
-
-                    }
-                } else
-
-                    if (ThirdPriorityMemory.length > 0) {
-                        var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
-                        for (var k = 0; k < MassSpawn.length; k++) {
-                            for (var q = 0; q < ThirdPriorityMemory.length; q++) {
-                              
-                                let newName = 'Helper' + Game.time;
-                                if (Game.spawns[MassSpawn[k].name].spawnCreep(ThirdPriorityMemory[0].charact, newName, { memory: { role: ThirdPriorityMemory[0].role, roomNumber: process.Room, options: ThirdPriorityMemory[0].options, SpawninigTime: ThirdPriorityMemory[0].charact.length * 3 } }) == OK) {
-                                    delete Memory.processor["SpawnControl" + process.Room].List[ThirdPriorityMemory[q].name];
-                                } 
-                            }
-
-                        }
-                    }
-            **/
             const ZeroPriorityMemory = _.filter(process.List, o => o.priority == 0);
             
             if (ZeroPriorityMemory.length > 0) {
