@@ -62,6 +62,9 @@ var serviceSpawnControl = {
 
         let LevelRoom = Memory.processor[process.NameProcess];
 
+
+
+
         if (!ControlScout) {
 
             switch(LevelRoom.level) {
@@ -661,6 +664,8 @@ var serviceSpawnControl = {
 
 
             var RolesRoom = _.filter(TablePopulation, obj => obj.roomNumber == process.Room);
+
+            //
             
             for (let key in RolesRoom) {
 
@@ -676,41 +681,39 @@ var serviceSpawnControl = {
                 }
             }
 
-            const FirstPriorityMemory = _.filter(process.List, o => o.priority == 1);
-            const SecondPriorityMemory = _.filter(process.List, o => o.priority == 2);
-            const ThirdPriorityMemory = _.filter(process.List, o => o.priority == 3);
+            
+            //const SecondPriorityMemory = _.filter(process.List, o => o.priority == 2);
+            //const ThirdPriorityMemory = _.filter(process.List, o => o.priority == 3);
 
-            if (FirstPriorityMemory.length > 0) {
-                var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
-                for (var k = 0; k < MassSpawn.length; k++) {
-                    for (var q = 0; q < FirstPriorityMemory.length; q++) {
-                        // let FirstPriority = _.find(TablePopulation, o => o.role == FirstPriorityMemory[q].role && o.roomNumber == process.Room && o.options == FirstPriorityMemory[q].options); 
-                        let newName = 'Harvester' + Game.time;
-                        // if (FirstPriority) {
-                        if (Game.spawns[MassSpawn[k].name].spawnCreep(FirstPriorityMemory[0].charact, newName, { memory: { role: FirstPriorityMemory[0].role, roomNumber: process.Room, options: FirstPriorityMemory[0].options, SpawninigTime: FirstPriorityMemory[0].charact.length * 3 } }) == OK) {
-                            delete Memory.processor["SpawnControl" + process.Room].List[FirstPriorityMemory[q].name];
-                        } /**else if (Game.spawns[MassSpawn[k].name].spawnCreep(FirstPriorityMemory[0].charact, newName ,{ memory: {role: FirstPriorityMemory[0].role, roomNumber: process.Room, options: FirstPriorityMemory[0].options, SpawninigTime: FirstPriorityMemory[0].charact.length * 3}}) == ERR_NOT_ENOUGH_ENERGY) {
-                                delete Memory.processor["SpawnControl"+process.Room].List[FirstPriorityMemory[q].name];
-                            } **/
-                        //  }
+            for (let i=1; i < 4; i++) {
+                let FirstPriorityMemory = _.filter(process.List, o => o.priority == i);
+                if (FirstPriorityMemory.length > 0) {
+                    var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
+                    for (var k = 0; k < MassSpawn.length; k++) {
+                        for (var q = 0; q < FirstPriorityMemory.length; q++) {
+                           
+                            let newName = 'Harvester' + Game.time;
+                           
+                            if (Game.spawns[MassSpawn[k].name].spawnCreep(FirstPriorityMemory[0].charact, newName, { memory: { role: FirstPriorityMemory[0].role, roomNumber: process.Room, options: FirstPriorityMemory[0].options, SpawninigTime: FirstPriorityMemory[0].charact.length * 3 } }) == OK) {
+                                delete Memory.processor["SpawnControl" + process.Room].List[FirstPriorityMemory[q].name];
+                            } 
+                        }
+    
                     }
-
                 }
-            } else
+            }
+             /**else
 
                 if (SecondPriorityMemory.length > 0) {
                     var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
                     for (var k = 0; k < MassSpawn.length; k++) {
                         for (var q = 0; q < SecondPriorityMemory.length; q++) {
-                            //let SecondPriority = _.find(TablePopulation, o => o.role == SecondPriorityMemory[q].role && o.roomNumber == process.Room && o.options == SecondPriorityMemory[q].options);
+                            
                             let newName = 'Worker' + Game.time;
-                            //if (SecondPriority) {
+                           
                             if (Game.spawns[MassSpawn[k].name].spawnCreep(SecondPriorityMemory[0].charact, newName, { memory: { role: SecondPriorityMemory[0].role, roomNumber: process.Room, options: SecondPriorityMemory[0].options, SpawninigTime: SecondPriorityMemory[0].charact.length * 3 } }) == OK) {
                                 delete Memory.processor["SpawnControl" + process.Room].List[SecondPriorityMemory[q].name];
-                            }/** else if (Game.spawns[MassSpawn[k].name].spawnCreep(SecondPriorityMemory[0].charact, newName ,{ memory: {role: SecondPriorityMemory[0].role, roomNumber: process.Room, options: SecondPriorityMemory[0].options, SpawninigTime: SecondPriorityMemory[0].charact.length * 3}}) == ERR_NOT_ENOUGH_ENERGY) {
-                                delete Memory.processor["SpawnControl"+process.Room].List[SecondPriorityMemory[q].name];
-                            } **/
-                            // }
+                            }
                         }
 
                     }
@@ -720,18 +723,16 @@ var serviceSpawnControl = {
                         var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
                         for (var k = 0; k < MassSpawn.length; k++) {
                             for (var q = 0; q < ThirdPriorityMemory.length; q++) {
-                                //let ThirdPriority = _.find(TablePopulation, o => o.role == ThirdPriorityMemory[q].role && o.roomNumber == process.Room && o.options == ThirdPriorityMemory[q].options); 
+                              
                                 let newName = 'Helper' + Game.time;
                                 if (Game.spawns[MassSpawn[k].name].spawnCreep(ThirdPriorityMemory[0].charact, newName, { memory: { role: ThirdPriorityMemory[0].role, roomNumber: process.Room, options: ThirdPriorityMemory[0].options, SpawninigTime: ThirdPriorityMemory[0].charact.length * 3 } }) == OK) {
                                     delete Memory.processor["SpawnControl" + process.Room].List[ThirdPriorityMemory[q].name];
-                                } /** else if (Game.spawns[MassSpawn[k].name].spawnCreep(ThirdPriorityMemory[0].charact, newName ,{ memory: {role: ThirdPriorityMemory[0].role, roomNumber: process.Room, options: ThirdPriorityMemory[0].options, SpawninigTime: ThirdPriorityMemory[0].charact.length * 3}}) == ERR_NOT_ENOUGH_ENERGY) {
-                            delete Memory.processor["SpawnControl"+process.Room].List[ThirdPriorityMemory[q].name];
-                        } **/
+                                } 
                             }
 
                         }
                     }
-
+            **/
             const ZeroPriorityMemory = _.filter(process.List, o => o.priority == 0);
             
             if (ZeroPriorityMemory.length > 0) {
