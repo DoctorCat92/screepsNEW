@@ -496,8 +496,7 @@ var serviceSpawnControl = {
 
         }
 
-        var RoomsCapacityEnergy = Game.rooms[process.Room].energyCapacityAvailable;
-
+        
         var Gatherings = _.filter(Memory.army, o => o.Gathering == true || (o.Gathering == false && o.Replenishments == true));
         //console.log() 
         if (Gatherings.length > 0) {
