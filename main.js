@@ -98,8 +98,8 @@ module.exports.loop = function() {
             console.log(result+' | '+Math.floor(t * 100) / 100+' '+i);
             cpuCounter = t;
            // } catch (error) {
-               console.log(error+' '+Processor[i]);
-               Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
+            //   console.log(error+' '+Processor[i]);
+           //    Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
           //  }
         }
         
