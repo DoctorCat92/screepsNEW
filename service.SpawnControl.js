@@ -366,7 +366,13 @@ var serviceSpawnControl = {
 
         }
 
+        //Астартес 
 
+        let GatheringAstartes = require('GatheringAstartes');
+        
+        GatheringAstartes.create();
+
+    
 
         // ÃÂÃÂÃÂÃÂ¾ÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂ¾ÃÂÃÂ»ÃÂÃÂ ÃÂÃÂÃÂÃÂÃÂÃÂ°ÃÂÃÂ½ÃÂÃÂÃÂÃÂ¿ÃÂÃÂ¾ÃÂÃÂÃÂÃÂÃÂÃÂ°
         let Number11 = process.Room;
