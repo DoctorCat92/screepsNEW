@@ -367,9 +367,9 @@ var serviceSpawnControl = {
         }
 
         //Астартес 
-        console.log(Room);
+        console.log(process.Room);
         var GA = require('procedure.GatheringAstartes');
-        GA.run(Room);
+        GA.run(process.Room);
 
     
 
