@@ -370,7 +370,6 @@ var serviceSpawnControl = {
 
         let GA = require('procedure.GatheringAstartes');
 
-        GA.create();
 
     
 
