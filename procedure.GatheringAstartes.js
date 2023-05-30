@@ -1,6 +1,7 @@
 var GatheringAstartes = {
     
     run: function () {
+        
         var RoomsCapacity = Game.rooms[Room].energyCapacityAvailable;
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
 
