@@ -368,9 +368,9 @@ var serviceSpawnControl = {
 
         //Астартес 
 
-        let GatheringAstartes = require('procedure.GatheringAstartes');
+        let GA = require('procedure.GatheringAstartes');
 
-        GatheringAstartes.create();
+        GA.create();
 
     
 
