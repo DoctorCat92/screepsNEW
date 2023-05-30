@@ -1,6 +1,6 @@
 var GatheringAstartes = {
     
-    create: function () {
+    run: function () {
         
         var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
 
@@ -206,5 +206,7 @@ var GatheringAstartes = {
             }
         }
     }
+
 };
-module.export = GatheringAstartes;
+
+module.exports = GatheringAstartes;
