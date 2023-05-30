@@ -1,6 +1,59 @@
 var GatheringAstartes = {
     
     create: function () {
+        
+        var CreateSquad = _.find(Game.flags, f => f.name.startsWith('CreateSquad'));
+
+        if (CreateSquad) {
+            
+            var PosFlag = CreateSquad.pos;
+            var str = CreateSquad.name;
+            var Healer = str.indexOf('Healer', 10);
+            var Ranged = str.indexOf('Ranged', 10);
+            var Melee = str.indexOf('Melee', 10);
+            var Rep = str.indexOf('Rep', 10);
+            var Auto = str.indexOf('Auto', 10);
+            var VarRep = false;
+            var VarAuto = false;
+            if (Rep > 0) {
+                VarRep = true;
+            }
+            if (Auto > 0) {
+                VarAuto = true;
+            }
+            
+
+            if (Memory.army === undefined) {
+                Memory.army = {};
+                Memory.army[CreateSquad.color] = { ColorSquad: CreateSquad.color, CheckPoint: PosFlag, Gathering: true, Population: true, Replenishment: VarRep, Transport: false },
+                Memory.army[CreateSquad.color].apothecary = Number(str[Healer + 7]);
+                if (Ranged > 0) {
+                    Memory.army[CreateSquad.color].typeAstartes = 'Ranged';
+                    Memory.army[CreateSquad.color].astartes = Number(str[Ranged + 7]);
+                }
+                if (Melee > 0) {
+                     Memory.army[CreateSquad.color].typeAstartes = 'Melee';
+                     Memory.army[CreateSquad.color].astartes = Number(str[Melee + 6]);
+                }
+                Memory.army[CreateSquad.color].typeCharact = VarAuto;
+                CreateSquad.remove();
+            } else {
+                Memory.army[CreateSquad.color] = { ColorSquad: CreateSquad.color, CheckPoint: PosFlag, Gathering: true, Population: true, Replenishment: VarRep, Transport: false };
+                Memory.army[CreateSquad.color].apothecary = Number(str[Healer + 7]);
+                if (Ranged > 0) {
+                    Memory.army[CreateSquad.color].typeAstartes = 'Ranged';
+                    Memory.army[CreateSquad.color].astartes = Number(str[Ranged + 7]);
+                }
+                if (Melee > 0) {
+                     Memory.army[CreateSquad.color].typeAstartes = 'Melee';
+                     Memory.army[CreateSquad.color].astartes = Number(str[Melee + 6]);
+                }
+                Memory.army[CreateSquad.color].typeCharact = VarAuto;
+                CreateSquad.remove();
+            }
+
+        }
+
 
         var Gatherings = _.filter(Memory.army, o => o.Gathering == true || (o.Gathering == false && o.Replenishments == true));
         //console.log() 
@@ -134,6 +187,22 @@ var GatheringAstartes = {
                         }
                     }   
                 }
+            }
+        }
+
+        
+        var MemorySquad = _.filter(Memory.army, o => o.Gathering == false && o.Replenishment == false);
+
+        for (let s = 0; s < MemorySquad.length; s++) {
+            var Astartes = _.filter(Game.creeps, creep => creep.memory.role == 'astartes' && creep.memory.roomNumber == MemorySquad[s].CheckPoint.roomName && creep.memory.squad == MemorySquad[s].ColorSquad);
+            if (Astartes.length == 0) {
+                var FlagsSquads = _.filter(Game.flags, f => f.name.startsWith('Squad'+MemorySquad[s].ColorSquad));
+                for (let i=0; i < FlagsSquads.length; i++) {
+                    Game.notify('Флаги сквада ' + MemorySquad[s].ColorSquad + ' удалены ' +Game.time+ ' в комнате '+ FlagsSquads[i].pos.roomName , 0);
+                    FlagsSquads[i].remove();
+                }
+                Game.notify('Your soldiers from ' + MemorySquad[s].ColorSquad + ' squad destroyed ' + Game.time, 0);
+                delete Memory.army[MemorySquad[s].ColorSquad];
             }
         }
     }
