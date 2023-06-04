@@ -89,18 +89,18 @@ module.exports.loop = function() {
         let Processor = Memory.processor;
         let cpuCounter = 0;      
         
-        for (let i in Processor) {
-            //try {
+        for (let name in Processor) {
+            try {
             let process = require(Processor[i].NameModule); 
-            process.run(Processor[i]);
+            process.run(Processor[name]);
             t = Game.cpu.getUsed();
             result = Math.floor((t-cpuCounter) * 100) / 100;
             console.log(result+' | '+Math.floor(t * 100) / 100+' '+i);
             cpuCounter = t;
-           // } catch (error) {
-            //   console.log(error+' '+Processor[i]);
-           //    Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
-          //  }
+            } catch (error) {
+               console.log(error+' '+Processor[i]);
+               Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
+            }
         }
         
         for(var name in Game.creeps) {
