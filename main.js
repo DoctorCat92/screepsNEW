@@ -91,7 +91,7 @@ module.exports.loop = function() {
         
         for (let name in Processor) {
           //  try {
-            let process = require(Processor[i].NameModule); 
+            let process = require(Processor[name].NameModule); 
             process.run(Processor[name]);
             t = Game.cpu.getUsed();
             result = Math.floor((t-cpuCounter) * 100) / 100;
