@@ -29,7 +29,7 @@ module.exports.loop = function() {
          
           
         ProcessList = {
-            transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
+            
         }
         
         for (let i in ProcessList) {
