@@ -53,7 +53,7 @@ module.exports.loop = function() {
 
         var RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
         var RoomMassOpt = ['W86N18','W86N17','W87N18'];
-        var createProcess = require('createProcess');
+        //var createProcess = require('createProcess');
         //var createProcess = require('class.process');
         for (let process in TableProcess) {
             if (TableProcess[process].status == true) {
