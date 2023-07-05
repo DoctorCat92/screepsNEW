@@ -28,8 +28,8 @@ module.exports.loop = function() {
 
          
           
-         ProcessList = {
-          
+        ProcessList = {
+            transference: {name: 'transference', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.transference',},
         }
         
         for (let i in ProcessList) {
@@ -48,11 +48,9 @@ module.exports.loop = function() {
             graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
 
         }
+        
+        //Создание процессов по таблице выше
 
-        
-       // var roomVisual = require('room.visual');
-        //roomVisual.roomNumber(process.Room);
-        
         var RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
         var RoomMassOpt = ['W86N18','W86N17','W87N18'];
         var createProcess = require('createProcess');
@@ -65,7 +63,7 @@ module.exports.loop = function() {
                             let Name = TableProcess[process].name+TableProcess[process].activRooms[p];
                             console.log('TESTING '+Name);
                             //createProcess.run(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
-                            let newProcess = new classProcess(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
+                            let newProcess = new classProcess(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
                             newProcess.start();
                         }
                     }
@@ -85,7 +83,7 @@ module.exports.loop = function() {
 
 
 
-        
+        // запуск процессов из памяти
         let Processor = Memory.processor;
         let cpuCounter = 0;      
         
@@ -95,7 +93,7 @@ module.exports.loop = function() {
             process.run(Processor[name]);
             t = Game.cpu.getUsed();
             result = Math.floor((t-cpuCounter) * 100) / 100;
-            console.log(result+' | '+Math.floor(t * 100) / 100+' '+i);
+            console.log(result+' | '+Math.floor(t * 100) / 100+' '+name);
             cpuCounter = t;
             //} catch (error) {
               // console.log(error+' '+Processor[i]);
