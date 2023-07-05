@@ -98,7 +98,7 @@ module.exports.loop = function() {
             //} catch (error) {
               // console.log(error+' '+Processor[i]);
                //Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
-            //}
+            //} /** **/
         }
         
         for(var name in Game.creeps) {
