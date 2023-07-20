@@ -42,7 +42,7 @@ module.exports.loop = function() {
             trader: {name: 'trader', status: true, type: 'service', activRooms: [], priority: 3, nameModule: 'service.trader',},
             SpawnControl: { name: 'SpawnControl',  status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.SpawnControl', },
             Protection: {name: 'Protection', status: true, type: 'service', activRooms: [], priority: 2,nameModule: 'service.protection',},
-            Observer: { name: 'Observer', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.observer',},
+            Observer: { name: 'observer', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.observer',},
             AutoBuilder: { name: 'AutoBuilder', status: true, type: 'service', activRooms: [], priority: 2, nameModule: 'service.autoBuilder',},
             visual: { name: 'visual', status: true, activRooms: [], priority: 3, nameModule: 'room.visual',},
             graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
