@@ -35,7 +35,7 @@ var serviceObserver = {
                     if (Observer.length) {
                         Observer[0].observeRoom(TrackingList[i]);
 
-                        if (i > 1000) {
+                        if (i < RoomObserver.length-1) {
                             let t = i-1;
                             let OpenRoom = TrackingList[t];
                             console.log(OpenRoom);
