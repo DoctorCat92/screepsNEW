@@ -35,7 +35,7 @@ var serviceObserver = {
                     if (Observer.length > 0) {
                         Observer[0].observeRoom(TrackingList[i]);
 
-                        if (i < RoomObserver[process.Room].roomsArray.length-1) {
+                        if (i>0) {
                             let t = i-1;
                             let OpenRoom = TrackingList[t];
                             console.log("Obsessed room "+OpenRoom);
