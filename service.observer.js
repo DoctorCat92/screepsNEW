@@ -32,7 +32,7 @@ var serviceObserver = {
                 if (process.time < TrackingList.length) {
                     let i = process.time; 
                     
-                    if (Observer.length) {
+                    if (Observer.length > 0) {
                         Observer[0].observeRoom(TrackingList[i]);
 
                         if (i < RoomObserver.length-1) {
