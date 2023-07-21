@@ -38,7 +38,7 @@ var serviceObserver = {
                         if (i < RoomObserver.length-1) {
                             let t = i-1;
                             let OpenRoom = TrackingList[t];
-                            console.log(OpenRoom);
+                            console.log("Obsessed room "+OpenRoom);
                             if (OpenRoom) {
                                 let PowerBank = Game.rooms[OpenRoom].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_POWER_BANK)});
                                 
