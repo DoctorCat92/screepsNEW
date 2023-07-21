@@ -49,7 +49,9 @@ var serviceObserver = {
                                             
                                             let Flag = _.find(Game.flags, f => f.name.startsWith('Squad') && f.pos.roomName == OpenRoom);
                                             if (Flag) {
-                                              Game.notify('Найдена банка в ' + PowerBank[0].pos.roomName + ' c временем ' + PowerBank[0].ticksToDecay);
+                                              
+                                            } else {
+                                                Game.notify('Найдена банка в ' + PowerBank[0].pos.roomName + ' c временем ' + PowerBank[0].ticksToDecay);
                                             }
                                         }
                                     }
