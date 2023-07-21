@@ -47,9 +47,9 @@ var serviceObserver = {
                                         if (PowerBank[0].ticksToDecay > 2300) {
                                             console.log('Найдена Повер банка в комнате '+OpenRoom)
                                             
-                                            let Flag =_.find(Game.flags, f => f.name.startsWith('Squad') && f.pos.roomName == OpenRoom); 
+                                            let Flag = _.find(Game.flags, f => f.name.startsWith('Squad') && f.pos.roomName == OpenRoom);
                                             if (Flag) {
-                                                Game.notify('Найдена банка в '+PowerBank[0].pos.roomName+' c временем '+PowerBank[0].ticksToDecay);
+                                              Game.notify('Найдена банка в ' + PowerBank[0].pos.roomName + ' c временем ' + PowerBank[0].ticksToDecay);
                                             }
                                         }
                                     }
