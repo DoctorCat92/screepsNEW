@@ -39,15 +39,19 @@ var serviceObserver = {
                             let t = i-1;
                             let OpenRoom = TrackingList[t];
                             console.log("Obsessed room "+OpenRoom);
-                            if (OpenRoom) {
-                                let PowerBank = Game.rooms[OpenRoom].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_POWER_BANK)});
-                                
-                                if (PowerBank.length > 0 ) {
-                                    if (PowerBank[0].ticksToDecay > 2200) {
-                                        console.log('Найдена Повер банка в комнате '+OpenRoom);
-                                        Game.notify('Найдена банка в '+PowerBank[0].pos.roomName+' c временем '+PowerBank[0].ticksToDecay);
+                            try {
+                                if (OpenRoom) {
+                                    let PowerBank = Game.rooms[OpenRoom].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_POWER_BANK)});
+                                    
+                                    if (PowerBank.length > 0 ) {
+                                        if (PowerBank[0].ticksToDecay > 2200) {
+                                            console.log('Найдена Повер банка в комнате '+OpenRoom);
+                                            Game.notify('Найдена банка в '+PowerBank[0].pos.roomName+' c временем '+PowerBank[0].ticksToDecay);
+                                        }
                                     }
                                 }
+                            } catch (e) {
+                                console.log(e);
                             }
                         }
                     }
