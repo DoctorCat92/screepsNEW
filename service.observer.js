@@ -45,8 +45,7 @@ var serviceObserver = {
                                     
                                     if (PowerBank.length > 0 ) {
                                         if (PowerBank[0].ticksToDecay > 2300) {
-                                            console.log('Найдена Повер банка в комнате '+OpenRoom)
-                                            
+                                            console.log('Найдена Повер банка в комнате '+OpenRoom);
                                             let Flag = _.find(Game.flags, f => f.name.startsWith('Squad') && f.pos.roomName == OpenRoom);
                                             if (Flag) {
                                               
@@ -59,6 +58,7 @@ var serviceObserver = {
 
                                                     } else if (!NameFlag) {
                                                         Game.rooms[OpenRoom].createFlag(15, 15, NameFlag, 10);
+                                                        Game.notify('Сквард '+SquadNumber+' направлен в комнату ' + PowerBank[0].pos.roomName);
                                                     }
                                                 }
                                                 
