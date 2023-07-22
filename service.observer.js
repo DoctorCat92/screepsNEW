@@ -57,7 +57,7 @@ var serviceObserver = {
                                                     if (NameFlag) {
 
                                                     } else if (!NameFlag) {
-                                                        Game.rooms[OpenRoom].createFlag(15, 15, NameFlag, 10);
+                                                        Game.rooms[OpenRoom].createFlag(15, 15, 'Squad'+SquadNumber+'-PowerMining0', 10);
                                                         Game.notify('Сквард '+SquadNumber+' направлен в комнату ' + PowerBank[0].pos.roomName);
                                                         break;
                                                     }
