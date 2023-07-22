@@ -52,7 +52,7 @@ var serviceObserver = {
                                             } else if (!Flag) {
                                                 Game.notify('Найдена банка в ' + PowerBank[0].pos.roomName + ' c временем ' + PowerBank[0].ticksToDecay);
                                                 
-                                                for (let SquadNumber=1; SquadNumber<10; SquadNumber++) {\
+                                                for (let SquadNumber=1; SquadNumber<10; SquadNumber++) {
                                                     let NameFlag = 'Squad'+SquadNumber+'-PowerMining0';
                                                     if (NameFlag) {
 
