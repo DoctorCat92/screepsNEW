@@ -20,7 +20,7 @@ var serviceObserver = {
             
        
         RoomObserver = {
-            W21S2: {roomName:'W21S2', roomsArray: ['W23S0','W22S0','W21S0','W20S0','W19S0','W18S0','W19N0','W18N0','W20S1','W20S2','W20S3','W20S4','W20S5'] },
+            W21S2: {roomName:'W21S2', roomsArray: ['W21S0','W20S0','W19S0','W18S0','W19N0','W18N0','W20S1','W20S2','W20S3','W20S4','W20S5'] },
         }
 
         let DataInTable = RoomObserver[process.Room]; 
