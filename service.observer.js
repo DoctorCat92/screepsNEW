@@ -40,7 +40,7 @@ var serviceObserver = {
                             let OpenRoom = TrackingList[t];
                             console.log("Obsessed room "+OpenRoom);
                          //   try {
-                                if (OpenRoom) {
+                                if (Game.rooms[OpenRoom]) {
                                     let PowerBank = Game.rooms[OpenRoom].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_POWER_BANK)});
                                     
                                     if (PowerBank.length > 0 ) {
