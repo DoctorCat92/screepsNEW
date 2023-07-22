@@ -53,12 +53,13 @@ var serviceObserver = {
                                                 Game.notify('Найдена банка в ' + PowerBank[0].pos.roomName + ' c временем ' + PowerBank[0].ticksToDecay);
                                                 
                                                 for (let SquadNumber=1; SquadNumber<10; SquadNumber++) {
-                                                    let NameFlag = 'Squad'+SquadNumber+'-PowerMining0';
+                                                    let NameFlag = Game.flags['Squad'+SquadNumber+'-PowerMining0'];
                                                     if (NameFlag) {
 
                                                     } else if (!NameFlag) {
                                                         Game.rooms[OpenRoom].createFlag(15, 15, NameFlag, 10);
                                                         Game.notify('Сквард '+SquadNumber+' направлен в комнату ' + PowerBank[0].pos.roomName);
+                                                        break;
                                                     }
                                                 }
                                                 
