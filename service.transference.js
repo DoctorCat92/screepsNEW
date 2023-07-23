@@ -86,6 +86,7 @@ var serviceTransference = {
                     tower: { roomNumber: 'all', priority: 0, source: Storage[0], target: Towers[0], type: 'energy', condition: 1000 },
                     terminalalt: { roomNumber: 'W19S7', priority: 2, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000 },
                     terminalall: { roomNumber: 'all', priority: 2, source: Storage[0], target: Terminal[0], type: 'energy', condition: 150000 },
+                    terminalallw21: { roomNumber: 'W21S2', priority: 1, source: Terminal[0], target: Storage[0], type: 'energy', condition: 150000 },
                     
 
 
