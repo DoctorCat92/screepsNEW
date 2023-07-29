@@ -58,7 +58,7 @@ var serviceObserver = {
 
                                                     } else if (!NameFlag) {
                                                         Game.rooms[OpenRoom].createFlag(15, 15, 'Squad'+SquadNumber+'-PowerMining0', 10);
-                                                        Game.notify('Сквард '+SquadNumber+' направлен в комнату ' + PowerBank[0].pos.roomName);
+                                                        Game.notify('Сквард '+SquadNumber+' направлен в комнату ' + PowerBank[0].pos.roomName+' на добычу банки с '+PowerBank[0].power+' силы.');
                                                         break;
                                                     }
                                                 }
