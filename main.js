@@ -9,6 +9,10 @@ module.exports.loop = function() {
    //test andr
    console.log(Game.time);
 
+        if(Game.cpu.bucket == 10000) {
+            Game.cpu.generatePixel();
+        }
+
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
             let Creeps = _.filter(Game.creeps, o=> o.memory.options == 1);
