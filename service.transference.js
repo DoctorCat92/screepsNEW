@@ -65,7 +65,7 @@ var serviceTransference = {
 
             if (process.time < 2) {
                 process.time = process.time + 1;
-            } else {       console.log('creare task');
+            } else {       
 
                 var Storage = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: (structure) => { return (structure.structureType == STRUCTURE_STORAGE); } });
                 var Terminal = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: (structure) => { return (structure.structureType == STRUCTURE_TERMINAL) ; } });
@@ -160,7 +160,7 @@ var serviceTransference = {
 
                             if (Total > 0) {
                                 let Resource = _.findKey(CreepsCarrier[i].store, o => o > 0);
-
+                                console.log('creare taskasdadasdsad');
                                 if (Resource == Task[0].type) {
                                     CreepsCarrier[i].memory.task = Task[0];
                                     CreepsCarrier[i].memory.target = Task[0].target;
