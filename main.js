@@ -9,9 +9,9 @@ module.exports.loop = function() {
    //test andr
    console.log(Game.time);
 
-        if(Game.cpu.bucket == 10000) {
-            Game.cpu.generatePixel();
-        }
+    //    if(Game.cpu.bucket == 10000) {
+      //      Game.cpu.generatePixel();
+       // }
 
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
@@ -92,17 +92,17 @@ module.exports.loop = function() {
         let cpuCounter = 0;      
         
         for (let name in Processor) {
-            //try {
+            try {
             let process = require(Processor[name].NameModule); 
             process.run(Processor[name]);
             t = Game.cpu.getUsed();
             result = Math.floor((t-cpuCounter) * 100) / 100;
             console.log(result+' | '+Math.floor(t * 100) / 100+' '+name);
             cpuCounter = t;
-            //} catch (error) {
-              // console.log(error+' '+Processor[i]);
-               //Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
-            //} /** **/
+            } catch (error) {
+               console.log(error+' '+Processor[i]);
+               Game.notify(error+' '+Processor[i]+' Game time '+Game.time,1);
+            } /** **/
         }
         
         for(var name in Game.creeps) {
