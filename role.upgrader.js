@@ -19,7 +19,7 @@ var roleUpgrader = {
         
         if(!creep.memory.upgrader) {
             var source = creep.pos.findClosestByPath(FIND_SOURCES, {filter: object => object.energy > creep.store.getCapacity()});
-            var MassStorage = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_STORAGE) && object.store[RESOURCE_ENERGY] > 150000});
+            var MassStorage = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_STORAGE) && object.store[RESOURCE_ENERGY] > 500000});
             var Links = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_LINK) && object.store[RESOURCE_ENERGY] > 0});
             var Terminal = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_TERMINAL) && object.store[RESOURCE_ENERGY] > 50000});
             
@@ -28,7 +28,7 @@ var roleUpgrader = {
                 if(creep.withdraw(Links[3], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.travelTo(Links[3]); 
                 }
-            } else if (MassStorage[0]) { creep.say('hi');
+            } else if (MassStorage[0]) { 
                 if (creep.room.controller.level > 0) { 
                     if(creep.withdraw(MassStorage[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         creep.travelTo(MassStorage[0]);
