@@ -393,7 +393,7 @@ var roleSupport = {
         
         break;
         
-        case 3: //ÃÂÃÂÃÂ¸ÃÂ¿ÃÂ ÃÂÃÂ°ÃÂ·ÃÂ½ÃÂ¾ÃÂ³ÃÂ¾ ÃÂ½ÃÂ°ÃÂ·ÃÂ½ÃÂ°ÃÂÃÂµÃÂ½ÃÂ¸ÃÂ
+        case 3: // Крипы по флагу PickupTargetRes тащят в доманшюю комнату что указано
         
     
         function FunctionCreep() {
@@ -411,7 +411,7 @@ var roleSupport = {
                 var PosFlag = Game.flags.PickupTargetResource.pos;
                 var PosCreep = creep.pos.roomName;
                 var Look = creep.room.lookAt(PosFlag);
-                var Resource = RESOURCE_ENERGY;
+                var Resource = RESOURCE_POWER;
                 
                 if (total < creep.carryCapacity) {
                     

@@ -11,7 +11,7 @@ var serviceSpawnControl = {
         TablePopulation =
 
         {
-            //harvester:  {role: 'support', roomNumber: 'W19S58', priority: 1, count: 1, staffed: [], charact: [CARRY], options: 1, }, //CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE
+            harvester:  {role: 'support', roomNumber: 'W19S57', priority: 1, count: 3, staffed: [], charact: [CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], options: 3, }, //CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE
           //  support45: { role: 'support', roomNumber: 'W12N51', priority: 3, count: 0, options: 5, staffed: [], charact: [CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]  },
 
         }
@@ -488,8 +488,8 @@ var serviceSpawnControl = {
                                
                                 if (Game.spawns[MassSpawn[k].name].spawnCreep(FirstPriorityMemory[0].charact, newName, { memory: { role: FirstPriorityMemory[0].role, roomNumber: process.Room, options: FirstPriorityMemory[0].options, SpawninigTime: FirstPriorityMemory[0].charact.length * 3 } }) == OK) {
                                     delete Memory.processor["SpawnControl" + process.Room].List[FirstPriorityMemory[q].name];
+                                    break;
                                 }
-                                break;
                             }
                         }
     
