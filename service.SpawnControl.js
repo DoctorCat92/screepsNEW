@@ -222,10 +222,8 @@ var serviceSpawnControl = {
                 TablePopulation[process.Room + 'ControlUpgrader'] = { role: 'upgrader', roomNumber: process.Room, priority: 3, count: 3, staffed: [], charact: [MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY], options: 1, };
             } else if (LevelRoom.level == 7) {
                 let MassStorage = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_STORAGE) });
-                if ((MassStorage.length > 0) && (Controller[0].level > 7)) {
-                    if (MassStorage[0].store[RESOURCE_ENERGY] > 500000) {
-                        TablePopulation[process.Room + 'ControlUpgrader'] = { role: 'upgrader', roomNumber: process.Room, priority: 3, count: 4, staffed: [], charact: [MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,], options: 1, };
-                    }
+                if ((MassStorage.length > 0) && (Controller[0].level > 7) && (MassStorage[0].store[RESOURCE_ENERGY] > 500000)) {
+                    TablePopulation[process.Room + 'ControlUpgrader'] = { role: 'upgrader', roomNumber: process.Room, priority: 3, count: 4, staffed: [], charact: [MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,], options: 1, };    
                 } else {
                     TablePopulation[process.Room + 'ControlUpgrader'] = { role: 'upgrader', roomNumber: process.Room, priority: 3, count: 1, staffed: [], charact: [MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY], options: 1, };
                 }
