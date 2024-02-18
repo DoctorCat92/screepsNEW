@@ -479,17 +479,17 @@ var serviceSpawnControl = {
            //-------------- Отправка крипов на спавн, из памяти процесса
 
             for (let i=1; i < 4; i++) {
-                
                     var MassSpawn = _.filter(Game.spawns, spawn => spawn.my && spawn.pos.roomName == process.Room && spawn.spawning == null);
                     for (var k = 0; k < MassSpawn.length; k++) {
+                        let FirstPriorityMemory = _.filter(process.List, o => o.priority == i);
                         for (var q = 0; q < FirstPriorityMemory.length; q++) {
-                            let FirstPriorityMemory = _.filter(process.List, o => o.priority == i);
                             if (FirstPriorityMemory.length > 0) {
                                 let newName = FirstPriorityMemory[0].role + Game.time + `f${(~~(Math.random() * 1e8)).toString(5)}`;
                                
                                 if (Game.spawns[MassSpawn[k].name].spawnCreep(FirstPriorityMemory[0].charact, newName, { memory: { role: FirstPriorityMemory[0].role, roomNumber: process.Room, options: FirstPriorityMemory[0].options, SpawninigTime: FirstPriorityMemory[0].charact.length * 3 } }) == OK) {
                                     delete Memory.processor["SpawnControl" + process.Room].List[FirstPriorityMemory[q].name];
                                 }
+                                break;
                             }
                         }
     
