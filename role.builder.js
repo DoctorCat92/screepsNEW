@@ -119,19 +119,14 @@ roleBuilder = {
                         if (ArrayTargets.length > 1) {
                             console.log("Массив"+ArrayTargets);
                             //var ClosestTarget = creep.pos.findClosestByPath(ArrayTargets);
-                        }
-                         
-                        
-                        /** if (typeof ClosestTarget !== undefined) {
                             if(creep.withdraw(ClosestTarget, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                 creep.travelTo(ClosestTarget);
                             }
-                        } else { **/
+                        } else { 
                             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                                 creep.travelTo(source);
                             }
-                       // }
-                        
+                        }
                     }
             }     
 	}
