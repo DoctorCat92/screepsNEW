@@ -118,7 +118,7 @@ roleBuilder = {
 
                         if (ArrayTargets.length > 0) {
                             console.log("Массив"+ArrayTargets);
-                            let ClosestTarget = creep.pos.findClosestByPath(ArrayTargets);
+                            var ClosestTarget = creep.pos.findClosestByPath(ArrayTargets);
                         }
                          
                         
