@@ -75,7 +75,7 @@ roleBuilder = {
                     } else {
                         var source = creep.pos.findClosestByPath(FIND_SOURCES); 
                         var Ruins = creep.pos.findClosestByPath(FIND_RUINS, {filter: object => object.store[RESOURCE_ENERGY] > 0}); 
-                        var MassStorage = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_STORAGE) && object.store[RESOURCE_ENERGY] > 50000});
+                        var MassStorage = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_STORAGE) && object.store[RESOURCE_ENERGY] > 0});
                         var Terminal = creep.room.find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_TERMINAL) && object.store[RESOURCE_ENERGY] > 50000});
                         var Container = creep.pos.findClosestByPath(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_CONTAINER) && object.store[RESOURCE_ENERGY] >= creep.store.getCapacity()}); 
                         
