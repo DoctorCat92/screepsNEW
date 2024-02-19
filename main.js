@@ -9,9 +9,9 @@ module.exports.loop = function() {
    //test andr
    console.log(Game.time);
 
-    //    if(Game.cpu.bucket == 10000) {
-      //      Game.cpu.generatePixel();
-       // }
+        if(Game.cpu.bucket == 10000) {
+            Game.cpu.generatePixel();
+        }
 
         let FlagErr = Game.flags.FlagErr;
         if (FlagErr) {
@@ -110,7 +110,7 @@ module.exports.loop = function() {
             
             let role = creep.memory.role;
              
-          //  try {
+            try {
             
                 if (role) {
                     let module = require('role.'+role);
@@ -121,10 +121,10 @@ module.exports.loop = function() {
                 cpuCounter = t;
                 console.log(result+' | '+Math.floor(t*100)/100+' | '+name+' '+role);
                 
-           /**} catch (error) {
+           } catch (error) {
                 console.log(error+' '+module.run+' '+name);
                 Game.notify(error+' '+module.run+' '+name+' Game time '+Game.time,1);
-            }  **/
+            } /** **/
         }
         
         
