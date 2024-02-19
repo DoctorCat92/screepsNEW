@@ -117,7 +117,7 @@ roleBuilder = {
                         }
 
                         if (ArrayTargets.length > 1) {
-                            console.log("Массив"+ArrayTargets.length);
+                            console.log("Массив"+ArrayTargets);
                             var ClosestTarget = creep.pos.findClosestByPath(ArrayTargets);
                             if(creep.withdraw(ClosestTarget, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                 creep.travelTo(ClosestTarget);
