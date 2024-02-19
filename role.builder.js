@@ -108,17 +108,19 @@ roleBuilder = {
                             console.log("Руины");
                         }
                         if (MassStorage.length > 0) {
-                            ArrayTargets.push(MassStorage[0]);
-                            console.log("Руины2");
+                            if (Terminal[0].store[RESOURCE_ENERGY] > 50000) {
+                                ArrayTargets.push(MassStorage[0]);
+                                console.log("Storage");
+                            }
                         }
                         if (Container) {
                             ArrayTargets.push(Container);
-                            console.log("Руины3");
+                            console.log("Container");
                         }
                         if (Terminal.length > 0) {
                             if (Terminal[0].store[RESOURCE_ENERGY] > 50000) {
                                 ArrayTargets.push(Terminal[0]);
-                                console.log("Руины4");
+                                console.log("Terminal");
                             }
                         }
 
