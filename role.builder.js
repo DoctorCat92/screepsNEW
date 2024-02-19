@@ -105,19 +105,23 @@ roleBuilder = {
                         
                         if (Ruins) {
                             ArrayTargets.push(Ruins);
+                            console.log("Руины");
                         }
                         if (MassStorage.length > 0) {
                             ArrayTargets.push(MassStorage[0]);
+                            console.log("Руины2");
                         }
                         if (Container) {
                             ArrayTargets.push(Container);
+                            console.log("Руины3");
                         }
                         if (Terminal) {
                             ArrayTargets.push(Terminal[0]);
+                            console.log("Руины4");
                         }
 
                         if (ArrayTargets.length > 1) {
-                            console.log("Массив"+ArrayTargets[2]);
+                            console.log("Массив"+ArrayTargets);
                             var ClosestTarget = creep.pos.findClosestByPath(ArrayTargets);
                             if(creep.withdraw(ClosestTarget, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                                 creep.travelTo(ClosestTarget);
