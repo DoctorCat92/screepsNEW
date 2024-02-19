@@ -115,9 +115,11 @@ roleBuilder = {
                             ArrayTargets.push(Container);
                             console.log("Руины3");
                         }
-                        if (Terminal) {
-                            ArrayTargets.push(Terminal[0]);
-                            console.log("Руины4");
+                        if (Terminal.length > 0) {
+                            if (Terminal[0].store[RESOURCE_ENERGY] > 50000) {
+                                ArrayTargets.push(Terminal[0]);
+                                console.log("Руины4");
+                            }
                         }
 
                         if (ArrayTargets.length > 1) {
