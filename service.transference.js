@@ -81,7 +81,7 @@ var serviceTransference = {
 
                 CarriersTasks = {
                     Tombston: { roomNumber: 'W21S2', priority: 1, source: Tombstones[0], target: Storage[0], type: 'energy', condition: 0},
-                    //H: { roomNumber: 'W21S2', priority: 1, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000},
+                    H: { roomNumber: 'W21S2', priority: 1, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000},
                     //terminalallw21: { roomNumber: 'W21S2', priority: 1, source: Terminal[0], target: Storage[0], type: 'energy', condition: 150000 },
                     
                     terminalalt: { roomNumber: 'W19S7', priority: 2, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000 },
