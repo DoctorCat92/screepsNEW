@@ -65,7 +65,7 @@ module.exports.loop = function() {
                     for (let i in TableProcess[process].activRooms) {
                         for (let p in RoomMass) {
                             let Name = TableProcess[process].name+TableProcess[process].activRooms[p];
-                            console.log('TESTING '+Name);
+                            
                             //createProcess.run(Name,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
                             let newProcess = new classProcess(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,TableProcess[process].activRooms[p]);
                             newProcess.start();
@@ -78,6 +78,7 @@ module.exports.loop = function() {
                         let Name = TableProcess[process].name+RoomMass[i].name;
                         //createProcess.run(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
                         let newProcess = new classProcess(Name,TableProcess[process].nameModule,TableProcess[process].state,TableProcess[process].prority,RoomMass[i].name);
+                        console.log('TESTING '+Name);
                         newProcess.start();
                     }
                 }
