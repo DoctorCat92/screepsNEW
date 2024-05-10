@@ -47,7 +47,7 @@ var serviceTrader = {
                 console.log('TRADE');
                 if (posFlag == posTerminal) {
                     for(const resourceStore in Terminal.store) {
-                        if (resourceStore !== 'energy') {
+                       // if (resourceStore !== 'energy') {
                             let Orders = Game.market.getAllOrders(order => order.resourceType == resourceStore && order.type == ORDER_BUY && Game.market.calcTransactionCost(1000, targetRoom, order.roomName) < 2000);
                             let OrdersSort = _.sortBy(Orders, ['price']);
                             let Maximum = OrdersSort.length - 1;
@@ -67,7 +67,7 @@ var serviceTrader = {
                                 Trade.remove();
                             }
                             
-                        }
+                      //  }
                     }
                     
                 }
