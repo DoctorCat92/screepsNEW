@@ -115,8 +115,7 @@ var serviceTransference = {
                                 if (Tasker[i].target.store[Tasker[i].type] < Tasker[i].condition) {
                                     let nameProcess = Tasker[i].target.id + Tasker[i].type + Tasker[i].priority + Tasker[i].condition;
                                     process.List[nameProcess] = { target: { id: Tasker[i].target.id, name: Tasker[i].target.name }, source: { id: Tasker[i].source.id, name: Tasker[i].source.name }, type: Tasker[i].type, priority: Tasker[i].priority, condition: Tasker[i].condition };
-                                    //console.log('creare task');
-                                    
+                                    //console.log('creare task');  
                                 }
                             }
                         } if (Tasker[i].type == 'all') {
@@ -127,7 +126,9 @@ var serviceTransference = {
                                     process.List[nameProcess] = { target: { id: Tasker[i].target.id, name: Tasker[i].target.name }, source: { id: Tasker[i].source.id, name: Tasker[i].source.name }, type: Res[0], priority: Tasker[i].priority, condition: Tasker[i].condition };
                                 }
                             }
-                        }
+                        } if (Tasker[i].type == 'disable') {
+                                delete process.List[nameProcess]
+                            }
                     }
                 }
 
