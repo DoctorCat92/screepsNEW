@@ -127,8 +127,14 @@ var serviceTransference = {
                                 }
                             }
                         } if (Tasker[i].type == 'disable') {
-                                delete process.List[nameProcess]
+                            if (Tasker[i].target && Tasker[i].source) {
+                                var Res = Object.keys(Tasker[i].source.store);
+                                if (Tasker[i].source.store[Res[0]] > 0) { //target
+                                    let nameProcess = Tasker[i].target.id + Res[0] + Tasker[i].priority + Tasker[i].condition;
+                                    delete process.List[nameProcess];
+                                }
                             }
+                        }
                     }
                 }
 
