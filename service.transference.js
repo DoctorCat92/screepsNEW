@@ -126,7 +126,7 @@ var serviceTransference = {
                                     process.List[nameProcess] = { target: { id: Tasker[i].target.id, name: Tasker[i].target.name }, source: { id: Tasker[i].source.id, name: Tasker[i].source.name }, type: Res[0], priority: Tasker[i].priority, condition: Tasker[i].condition };
                                 }
                             }
-                        } if (Tasker[i].type == 'disable') {
+                        } if (Tasker[i].roomNumber == 'disable') {
                             if (Tasker[i].target && Tasker[i].source) {
                                 var Res = Object.keys(Tasker[i].source.store);
                                 if (Tasker[i].source.store[Res[0]] > 0) { //target
