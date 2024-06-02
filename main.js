@@ -52,8 +52,6 @@ module.exports.loop = function() {
             graph: { name: 'graph', status: true, activRooms: [], priority: 3, nameModule: 'service.Graph',},
 
         }
-        
-        //Создание процессов по таблице выше
 
         var RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
         var RoomMassOpt = ['W86N18','W86N17','W87N18'];
