@@ -80,25 +80,25 @@ var serviceTransference = {
                 //  
 
                 CarriersTasks = {
-                    Tombston: { roomNumber: 'W21S2', priority: 1, source: Tombstones[0], target: Storage[0], type: 'energy', condition: 0},
-                    H: { roomNumber: 'W21S2', priority: 1, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000},
-                    //terminalallw21: { roomNumber: 'W21S2', priority: 1, source: Terminal[0], target: Storage[0], type: 'energy', condition: 150000 },
+                    Tombston: { roomNumber: 'W21S2', priority: 1, source: Tombstones[0], target: Storage[0], type: 'energy', condition: 0, state:true},
+                    H: { roomNumber: 'W21S2', priority: 1, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000, state:true},
+                    //terminalallw21: { roomNumber: 'W21S2', priority: 1, source: Terminal[0], target: Storage[0], type: 'energy', condition: 150000, state:true },
                     
-                    terminalalt: { roomNumber: 'W19S7', priority: 2, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000 },
+                    terminalalt: { roomNumber: 'W19S7', priority: 2, source: Storage[0], target: Terminal[0], type: 'H', condition: 150000, state:true },
                     
                     
-                   // lab0K: { roomNumber: 'all', priority: 1, source: Storage[0], target: Lab[0], type: 'K', condition: 3000 },
-                    StorageEn: { roomNumber: 'all', priority: 1, source: link[2], target: Storage[0], type: 'energy', condition: 800000},
-                    tower: { roomNumber: 'all', priority: 0, source: Storage[0], target: Towers[0], type: 'energy', condition: 1000 },
-                    terminalall: { roomNumber: 'disable', priority: 2, source: Storage[0], target: Terminal[0], type: 'energy', condition: 150000 },
-                    lab0e: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[0], type: 'energy', condition: 2000 },
-                    lab1K: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[1], type: 'LO', condition: 3000 },
-                    lab1e: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[1], type: 'energy', condition: 2000 },
-                    PowerEn: { roomNumber: 'all', priority: 1, source: Storage[0], target: PowerSpawn[0], type: 'energy', condition: 5000 },
-                    PowerPr: { roomNumber: 'all', priority: 1, source: Storage[0], target: PowerSpawn[0], type: 'power', condition: 100 },
-                    NukeEn: { roomNumber: 'all', priority: 3, source: link[2], target: Nuke[0], type: 'energy', condition: 300000 },
-                    NukePr: { roomNumber: 'all', priority: 2, source: Terminal[0], target: Nuke[0], type: 'G', condition: 5000 },
-                    NukePrS: { roomNumber: 'all', priority: 1, source: Storage[0], target: Nuke[0], type: 'G', condition: 5000 },
+                   // lab0K: { roomNumber: 'all', priority: 1, source: Storage[0], target: Lab[0], type: 'K', condition: 3000 , state:true},
+                    StorageEn: { roomNumber: 'all', priority: 1, source: link[2], target: Storage[0], type: 'energy', condition: 800000, state:true},
+                    tower: { roomNumber: 'all', priority: 0, source: Storage[0], target: Towers[0], type: 'energy', condition: 1000 , state:true},
+                    terminalall: { roomNumber: 'all', priority: 2, source: Storage[0], target: Terminal[0], type: 'energy', condition: 150000, state:false },
+                    lab0e: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[0], type: 'energy', condition: 2000, state:true },
+                    lab1K: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[1], type: 'LO', condition: 3000, state:true },
+                    lab1e: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[1], type: 'energy', condition: 2000, state:true },
+                    PowerEn: { roomNumber: 'all', priority: 1, source: Storage[0], target: PowerSpawn[0], type: 'energy', condition: 5000, state:true },
+                    PowerPr: { roomNumber: 'all', priority: 1, source: Storage[0], target: PowerSpawn[0], type: 'power', condition: 100, state:true },
+                    NukeEn: { roomNumber: 'all', priority: 3, source: link[2], target: Nuke[0], type: 'energy', condition: 300000, state:true },
+                    NukePr: { roomNumber: 'all', priority: 2, source: Terminal[0], target: Nuke[0], type: 'G', condition: 5000, state:true },
+                    NukePrS: { roomNumber: 'all', priority: 1, source: Storage[0], target: Nuke[0], type: 'G', condition: 5000, state:true },
 
                 }
 
@@ -126,7 +126,7 @@ var serviceTransference = {
                                     process.List[nameProcess] = { target: { id: Tasker[i].target.id, name: Tasker[i].target.name }, source: { id: Tasker[i].source.id, name: Tasker[i].source.name }, type: Res[0], priority: Tasker[i].priority, condition: Tasker[i].condition };
                                 }
                             }
-                        } if (Tasker[i].roomNumber == 'disable') {
+                        } if (Tasker[i].state == false) {
                             if (Tasker[i].target && Tasker[i].source) {
                                 var Res = Object.keys(Tasker[i].source.store);
                                 if (Tasker[i].source.store[Res[0]] > 0) { //target
