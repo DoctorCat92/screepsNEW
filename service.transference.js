@@ -134,7 +134,7 @@ var serviceTransference = {
                                 var Res = Object.keys(Tasker[i].source.store);
                                 if (Tasker[i].source.store[Res[0]] > 0) { //target
                                     let nameProcess = Tasker[i].target.id + Res[0] + Tasker[i].priority + Tasker[i].condition;
-                                    delete process.List[nameProcess];
+                                    delete Memory.processor[process.Name].List[nameProcess];
                                     console.log("pupa");
                                 }
                             }
