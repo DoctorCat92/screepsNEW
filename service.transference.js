@@ -89,7 +89,7 @@ var serviceTransference = {
                    // lab0K: { roomNumber: 'all', priority: 1, source: Storage[0], target: Lab[0], type: 'K', condition: 3000 , state:true},
                     StorageEn: { roomNumber: 'all', priority: 1, source: link[2], target: Storage[0], type: 'energy', condition: 800000, state:true},
                     tower: { roomNumber: 'all', priority: 0, source: Storage[0], target: Towers[0], type: 'energy', condition: 1000 , state:true},
-                    terminalall: { roomNumber: 'all', priority: 2, source: Storage[0], target: Terminal[0], type: 'energy', condition: 150000, state:true },
+                    //terminalall: { roomNumber: 'all', priority: 2, source: Storage[0], target: Terminal[0], type: 'energy', condition: 150000, state:true },
                     lab0e: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[0], type: 'energy', condition: 2000, state:true },
                     lab1K: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[1], type: 'LO', condition: 3000, state:true },
                     lab1e: { roomNumber: 'all', priority: 2, source: Storage[0], target: Lab[1], type: 'energy', condition: 2000, state:true },
