@@ -11,9 +11,9 @@ var serviceSpawnControl = {
         TablePopulation =
 
         {
-            harvester:  {role: 'support', roomNumber: 'W19S7', priority: 1, count: 3, staffed: [], charact: [CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], options: 1, }, //CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE
-          //  support45: { role: 'support', roomNumber: 'W12N51', priority: 3, count: 0, options: 5, staffed: [], charact: [CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]  },
-
+           // harvester:  {role: 'support', roomNumber: 'W19S7', priority: 1, count: 8, staffed: [], charact: [CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], options: 3, }, //CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE
+            //support45: { role: 'support', roomNumber: 'W21S2', priority: 3, count: 3, options: 5, staffed: [], charact: [CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]  },
+            //support45: { role: 'support', roomNumber: 'W21S2', priority: 3, count: 3, options: 5, staffed: [], charact: [CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,CARRY,CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]  },
         }
 
 
@@ -315,7 +315,7 @@ var serviceSpawnControl = {
 
         if (Colonisation) {
             let Claim =_.find(Game.flags, f => f.name.endsWith(process.Room+'Claim'));
-            if(!Claim) {    
+            if(Claim) {    
                 TablePopulation['invader1'] = { role: 'invader', roomNumber: process.Room, priority: 3, count: 1, staffed: [], charact: [MOVE, CLAIM], options: 1, };
             }
         }
