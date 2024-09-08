@@ -7,6 +7,8 @@ module.exports.loop = function() {
     var rolePowerSpawn = require('role.powerSpawn');
     var Names = require('Names');
    //test andr asdad
+   
+   
    console.log(Game.time);
 
         if(Game.cpu.bucket == 10000) {
