@@ -314,7 +314,7 @@ var serviceSpawnControl = {
         var Invader = Game.flags.Invader;
 
         if (Colonisation) {
-            let Claim =_.find(Game.flags, f => f.name.endsWith(process.Room+'Claim'));
+            let Claim =_.find(Game.flags, f => f.name.endsWith('Claim-'+process.Room));
             if(Claim) {    
                 TablePopulation['invader1'] = { role: 'invader', roomNumber: process.Room, priority: 3, count: 1, staffed: [], charact: [MOVE, CLAIM], options: 1, };
             }
