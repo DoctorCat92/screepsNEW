@@ -23,7 +23,7 @@ var serviceSpawnControl = {
 
         var RoomsEnergy = Game.rooms[process.Room].energyAvailable;
         var RoomsCapacity = Game.rooms[process.Room].energyCapacityAvailable;
-        var MassExtension = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_EXTENSION && object.my == true) });
+        var MassExtension = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_EXTENSION && object.my == true  && object.isActive() == true ) });
         var Controller = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_CONTROLLER) });
         //let Tower = Game.rooms[roomName].find(FIND_STRUCTURES, {filter: object => (object.structureType == STRUCTURE_TOWER)});
         //let SumEnergyTower = _.sum(Tower.energy);
@@ -57,8 +57,8 @@ var serviceSpawnControl = {
         var ControlScout = _.find(TablePopulation, o => o.roomNumber == process.Room && o.role == 'scout');
 
 
-        var MassContainer = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_CONTAINER && object.my == true) });
-        var MassLink = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_LINK && object.my == true) });
+        var MassContainer = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_CONTAINER && object.my == true && object.isActive() == true ) });
+        var MassLink = Game.rooms[process.Room].find(FIND_STRUCTURES, { filter: object => (object.structureType == STRUCTURE_LINK && object.my == true && object.isActive() == true )  });
 
         let LevelRoom = Memory.processor[process.NameProcess];
 
