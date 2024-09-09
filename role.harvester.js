@@ -7,7 +7,7 @@ run: function(creep) {
         
         case 1:    
             
-        let targets = creep.room.find(FIND_STRUCTURES, {
+        var targets = creep.room.find(FIND_STRUCTURES, {
             filter: (structure) => {
                 return (structure.structureType == STRUCTURE_SPAWN ||
                         structure.structureType == STRUCTURE_EXTENSION ||
