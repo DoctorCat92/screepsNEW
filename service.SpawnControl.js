@@ -437,7 +437,7 @@ var serviceSpawnControl = {
                             let FlagCheckPoint  =  _.find(Game.flags, f => f.name.startsWith('CheckPoint'+ResultRoom));
                             
                             if (FlagCheckPoint) {
-                                new RoomVisual(SquadFlag[f].pos.roomName).text('Из комнаты '+ColorVar+' '+DistanceRoom ,SquadFlag[f].pos.x+3,SquadFlag[f].pos.y+3, {color: '#FF0000', fontSize: 10});
+                                new RoomVisual(SquadFlag[f].pos.roomName).text('Из комнаты идёт цвет '+ColorVar+' дистанция клеток '+DistanceRoom ,SquadFlag[f].pos.x+3,SquadFlag[f].pos.y+3, {color: '#FF0000', fontSize: 10});
                                 Game.rooms[ResultRoom].createFlag(FlagCheckPoint.pos.x, FlagCheckPoint.pos.y, 'CreateSquad Healer-3 Melee-2 Auto', ColorVar);
                             }
                         }
