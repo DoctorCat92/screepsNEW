@@ -97,7 +97,7 @@ run: function(creep) {
             }
         }); 
 
-        creep.say(targets.length);
+        creep.say(targets);
         
         
 	   
