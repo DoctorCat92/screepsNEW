@@ -25,7 +25,7 @@ run: function(creep) {
             }); 
             
             var buildTarget = creep.room.find(FIND_CONSTRUCTION_SITES);
-
+            creep.say(targets.length);
             if (targets.length > 0) {
                 creep.say(targets.length);
                 creep.memory.harvester = true;
