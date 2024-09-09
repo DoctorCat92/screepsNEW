@@ -416,7 +416,7 @@ var serviceSpawnControl = {
             if (SquadFlag[f]) {
                 let FlagPowerMining  = SquadFlag[f].name.indexOf('Squad', 0);
                 if (FlagPowerMining !== -1) {
-                    let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my);
+                    let RoomMass =_.filter(Game.rooms,rooms=>rooms.controller&&rooms.controller.my&&rooms.controller.level == 8);
                     let DistanceRoom = 1000;
                     for (room in RoomMass) {
                         
