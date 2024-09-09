@@ -7,15 +7,6 @@ run: function(creep) {
         
         case 1:    
             
-        var targets = creep.room.find(FIND_STRUCTURES, {
-            filter: (structure) => {
-                return (structure.structureType == STRUCTURE_SPAWN ||
-                        structure.structureType == STRUCTURE_EXTENSION ||
-                        structure.structureType == STRUCTURE_TOWER) && (structure.store[RESOURCE_ENERGY] < structure.store.getCapacity(RESOURCE_ENERGY) && structure.isActive() == true);
-            }
-        }); 
-
-        creep.say(targets.length);
             
         if (creep.carry.energy == 0) {
             creep.memory.upgrader = false;
@@ -25,7 +16,13 @@ run: function(creep) {
         
         if (creep.store[RESOURCE_ENERGY] == creep.store.getCapacity() && (!creep.memory.harvester && !creep.memory.upgrader && !creep.memory.builder)) {
             
-            
+            var targets = creep.room.find(FIND_STRUCTURES, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_SPAWN ||
+                            structure.structureType == STRUCTURE_EXTENSION ||
+                            structure.structureType == STRUCTURE_TOWER) && (structure.store[RESOURCE_ENERGY] < structure.store.getCapacity(RESOURCE_ENERGY) && structure.isActive() == true);
+                }
+            }); 
             
             var buildTarget = creep.room.find(FIND_CONSTRUCTION_SITES);
             //creep.say(targets.length);
