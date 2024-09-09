@@ -7,6 +7,16 @@ run: function(creep) {
         
         case 1:    
             
+        let targets = creep.room.find(FIND_STRUCTURES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_SPAWN ||
+                        structure.structureType == STRUCTURE_EXTENSION ||
+                        structure.structureType == STRUCTURE_TOWER) && (structure.store[RESOURCE_ENERGY] < structure.store.getUsedCapacity());
+            }
+        }); 
+
+        creep.say(targets);
+        
             
         if (creep.carry.energy == 0) {
             creep.memory.upgrader = false;
@@ -89,16 +99,7 @@ run: function(creep) {
             
         }
 
-        let targets = creep.room.find(FIND_STRUCTURES, {
-            filter: (structure) => {
-                return (structure.structureType == STRUCTURE_SPAWN ||
-                        structure.structureType == STRUCTURE_EXTENSION ||
-                        structure.structureType == STRUCTURE_TOWER) && (structure.store[RESOURCE_ENERGY] < structure.store.getUsedCapacity());
-            }
-        }); 
-
-        creep.say(targets);
-        
+       
         
 	   
         break;
